@@ -1,0 +1,38 @@
+version: "3"
+services:
+  api_babe:
+    build: .
+    ports:
+    - "80:80"
+    working_dir: /var/www/html
+    volumes:
+    - ./:/var/www/html/  //read, write and execute
+    networks:
+        net-babe:
+          ipv4_address: 10.5.0.6
+    depends_on:
+    - db_babe
+  db_babe:
+    image: mysql:5.7
+    container_name: db-babe
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: babe
+      MYSQL_ROOT_PASSWORD: babe123
+      MYSQL_PASSWORD: babe123
+      MYSQL_USER: userbabe
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - 3306:3306
+    networks:
+        net-babe:
+            ipv4_address: 10.5.0.7
+volumes:
+  data-volume:
+networks:
+    net-babe:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 10.5.0.0/16
