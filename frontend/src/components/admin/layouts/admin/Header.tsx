@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { AuthContext } from '../../../store/auth/authContext'
+import { AuthContext } from '../../../../store/auth/authContext'
 
 interface Props {
     isOpen: boolean,

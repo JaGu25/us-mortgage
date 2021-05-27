@@ -4,7 +4,7 @@ import { AuthContext } from './../store/auth/authContext'
 
 const PublicRoute = ({ component: RouteComponent, ...rest }: any): any => {
   const { isLogged } = useContext(AuthContext)
-
+  console.log(1);
   return (
     <Route
         {...rest}

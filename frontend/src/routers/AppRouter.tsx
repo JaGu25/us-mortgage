@@ -8,17 +8,18 @@ import PublicRoute from './PublicRoute'
 import Home from '../pages/main/home'
 import Login from '../pages/admin/auth/login'
 import Dashboard from '../pages/admin/dashboard/dashboard'
+import form from '../pages/main/form'
 
 
 const AppRouter = (): any => {
   return (
     <Router>
       <Switch>
-        <PublicRoute exact path='/login' component={Login} />
         <PublicRoute exact path='/' component={Home} />
+        <PublicRoute exact path='/form' component={form} />
+        <PublicRoute exact path='/login' component={Login} />
         <PrivateRoute exact path="/admin"
-                        component={Dashboard}
-                    />
+                        component={Dashboard} />
         <Redirect to="/"></Redirect>
         </Switch>
     </Router>

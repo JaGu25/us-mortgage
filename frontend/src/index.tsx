@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import AppAdmin from './AppAdmin';
+import AppAdmin from './AppMortgage';
 
 ReactDOM.render(
   <React.StrictMode>

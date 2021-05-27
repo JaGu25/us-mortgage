@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
-import { TextField } from '../../../components/utils/forms/TextField'
+import { TextField } from '../../../components/admin/utils/forms/TextField'
 import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
-import Button from '../../../components/utils/buttons/Button'
+import Button from '../../../components/admin/utils/buttons/Button'
 import { AuthContext } from '../../../store/auth/authContext'
 import logoImg from './../../../assets/imgs/logo.png'
 
