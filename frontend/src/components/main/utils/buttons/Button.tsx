@@ -1,15 +1,19 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Icons from '../icons/Icons'
+import { iconType } from './../../../../helpers/interfaces';
 
 type buttonType = 'submit' | 'button'
 
 interface IButtonProps {
-  type?: buttonType
-  text: string
-  to?: string
-  isDisabled?: boolean
-  handleClick?: () => void
-  isLoading?: boolean
+    type?: buttonType
+    text: string
+    to?: string
+    isDisabled?: boolean
+    handleClick?: () => void
+    isLoading?: boolean
+    icon?: iconType
+    extraStyle?: string
 }
 
 const Button: React.FC<IButtonProps> = ({
@@ -18,19 +22,28 @@ const Button: React.FC<IButtonProps> = ({
     to,
     handleClick,
     isDisabled,
-    isLoading = false
+    isLoading = false,
+    icon,
+    extraStyle
 }) => {
 
     if (to !== undefined) {
-        return <Link to={to} className="btn-main">{text}</Link>
+        return (
+            <Link to={to} className={`btn-main inline-block justify-around  ${extraStyle}`}>
+                <span className="flex items-center ">
+                    {icon !== undefined && (<Icons icon={icon} style="w-12 fill-current text-white mr-2" />)}
+                    {text}
+                </span>
+            </Link>
+        )
     }
 
     return (
         <button
             type={type}
-            className="btn-main" 
+            className={`btn-main ${extraStyle}`}
             disabled={isDisabled}
-            >
+        >
             {text}
             {
                 isLoading && (<i className="fas fa-spinner fa-spin ml-2"></i>)

@@ -1,0 +1,27 @@
+
+.card {
+    @apply relative w-40 font-mabry border-main border-4 flex items-center justify-center rounded-2xl py-6 px-2 cursor-pointer m-4 transition-all ease-in-out duration-300;
+}
+
+.card-chip {
+    @apply absolute text-white bg-main px-2 py-1 rounded-md text-xs -bottom-4 tracking-wider;
+    min-width: 6rem;
+}
+
+.card-chip-add {
+    @apply -bottom-7 leading-4;
+    max-width:6rem;
+}
+
+.card-active {
+    @apply bg-main transition-all ease-in-out duration-300;
+    transform: scale(1.15)
+}
+
+.card-active svg.active {
+    @apply text-white;
+}
+
+.card-active span.active {
+    @apply border-white border-2;
+}

@@ -1,0 +1,1 @@
+export type iconType = 'commercial' | 'home' | 'refinance'

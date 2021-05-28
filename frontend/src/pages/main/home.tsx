@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../../components/main/layouts/Navbar'
 import Button from '../../components/main/utils/buttons/Button'
 import mainImg from './../../assets/imgs/main.png'
-import smileIcon from './../../assets/imgs/icons/smile_face_01.svg'
+import smileIcon from './../../assets/imgs/icons/commercial.svg'
 
 const Home: React.FC = () => {
     return (
@@ -36,10 +36,12 @@ const Home: React.FC = () => {
                         <Button
                             text="RESIDENTIAL"
                             to="/form"
+                            icon="home"
                         />
                         <Button
                             text="COMMERCIAL"
                             to="/form"
+                            icon="commercial"
                         />
                     </div>
                 </div>

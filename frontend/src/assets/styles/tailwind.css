@@ -7,15 +7,11 @@
 @import "./../../components/admin/utils/forms/index.css"; 
 @import "./../../components/admin/utils/buttons/index.css"; 
 @import "./../../components/main/utils/buttons/index.css"; 
+@import "./../../components/main/utils/card/index.css"; 
+@import "./../../components/main/utils/forms/index.css"; 
 
 @import "tailwindcss/utilities";
 
-
-@font-face {
-    font-family: "Gobold";
-    font-weight: 800;
-    src: url("./../fonts/Gobold\ Bold.otf");
-}
 
 @font-face {
     font-family: "Gobold";
@@ -34,3 +30,34 @@
     font-weight: 700;
     src: url("./../fonts/Gobold\ Uplow.otf");
 }
+
+@font-face {
+    font-family: "Gobold";
+    font-weight: 800;
+    src: url("./../fonts/Gobold\ Bold.otf");
+}
+
+@font-face {
+    font-family: "Mabry";
+    font-weight: 300;
+    src: url("./../fonts/Mabry\ Pro\ Light.otf");
+}
+
+@font-face {
+    font-family: "Mabry";
+    font-weight: 400;
+    src: url("./../fonts/Mabry\ Pro\ Medium.otf");
+}
+
+@font-face {
+    font-family: "Mabry";
+    font-weight: 700;
+    src: url("./../fonts/Mabry\ Pro\ Bold.otf");
+}
+
+@font-face {
+    font-family: "Mabry";
+    font-weight: 800;
+    src: url("./../fonts/Mabry\ Pro\ Black.otf");
+}
+
