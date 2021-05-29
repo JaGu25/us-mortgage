@@ -13,6 +13,7 @@ interface ITextFieldProps {
   value: string
   register?: any
   handleChange?: () => void
+  extraStyle?: string
 }
 
 const TextField: React.FC<ITextFieldProps> = ({
@@ -24,14 +25,15 @@ const TextField: React.FC<ITextFieldProps> = ({
     isDisabled = false,
     value,
     register = null,
-    handleChange
+    handleChange,
+    extraStyle = ''
 }) => {
 
     const hasError: boolean = errorMessage !== undefined;
 
     return (
-        <div className="form my-2 font-mabry w-1/5 main">
-            <label className="block mb-6 text-base text-main" htmlFor={id}>{label}</label>
+        <div className="form my-2 font-mabry w-7/12 lg:w-1/5 main">
+            <label className="block mb-3 text-base text-main" htmlFor={id}>{label}</label>
             {
                 register ? (
                     <input
@@ -40,7 +42,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                         name={name}
                         disabled={isDisabled}
                         {...register(name)}
-                        className={`input ${hasError && ('invalid')}`}
+                        className={`input ${hasError && ('invalid')} ${extraStyle}`}
                         value={value}
                     />
                 ) 
@@ -50,7 +52,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                     type={type}
                     name={name}
                     disabled={isDisabled}
-                    className={`input ${hasError && ('invalid')}`}
+                    className={`input ${hasError && ('invalid')} ${extraStyle}`}
                     value={value}
                 />
                 )

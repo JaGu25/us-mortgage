@@ -4,30 +4,36 @@ import { iconType } from './../../../../helpers/interfaces';
 
 interface ICardProps {
     icon: iconType
-    text: string
     active: boolean
+    text?: string
     extraChipStyle?: string
+    extraCardStyle?: string
     chip?: boolean
 }
 
 const Card: React.FC<ICardProps> = ({
     icon,
-    text,
+    text = '',
     active = false,
     extraChipStyle = '',
+    extraCardStyle = '',
     chip = true
 }) => {
 
     const setActiveHover = (e: MouseEvent<HTMLElement>) => {
-        e.currentTarget.classList.add('card-active');
+        if(!active) {
+            e.currentTarget.classList.add('card-active');
+        }
     }
 
     const setInactiveHover = (e: MouseEvent<HTMLElement>) => {
-        e.currentTarget.classList.remove('card-active');
+        if(!active) {
+            e.currentTarget.classList.remove('card-active');
+        }
     }
 
     return (
-        <div className={`card ${active ? 'card-active' : ''}`}
+        <div className={`card ${active ? 'card-active' : ''} ${extraCardStyle}`}
             onMouseEnter={setActiveHover}
             onMouseLeave={setInactiveHover}
         >

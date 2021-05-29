@@ -12,7 +12,10 @@ const Form = () => {
             <section className="container mx-auto text-center py-12 lg:py-24">
                 <h2 className="text-main text-3xl lg:text-5xl font-mabry uppercase font-bold px-4">Residential Loans</h2>
                 <div className="flex flex-col items-center justify-center sm:flex-row my-12 lg:mt-24 flex-wrap">
-                    <Card icon="home" text="Home Purchase" active={false} />
+                    <Card icon="refinance" text="Home Purchase" active={false} />
+                    <Card icon="refinance" text="Refinance" active={false} />
+                    <Card icon="commercial" text="Refinance" active={false} />
+                    <Card icon="refinance" text="Refinance" active={false} />
                     <Card icon="refinance" text="Refinance" active={false} />
                 </div>
                 <div className="mt-12 lg:mt-20">

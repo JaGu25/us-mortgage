@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import SocialMedia from '../utils/buttons/SocialLink'
 import logoImg from './../../../assets/imgs/logo.png'
 
@@ -23,7 +24,7 @@ const Navbar: React.FC = () => {
             </div>
             <div className="bg-main py-3">
                 <div className="container mx-auto">
-                    <a href="#" className="text-gray-200 ml-4 lg:m-0 text-base lg:text-xl">APPLY NOW</a>
+                    <Link to='/' className="text-gray-200 ml-4 lg:m-0 text-base lg:text-xl">APPLY NOW</Link>
                 </div>
             </div>
         </div>
