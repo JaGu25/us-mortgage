@@ -12,7 +12,6 @@ import Form from '../pages/main/form'
 import Form2 from '../pages/main/form2'
 import Form3 from '../pages/main/form3'
 import Form4 from '../pages/main/form4'
-import Form5 from '../pages/main/form5'
 import LastStep from '../pages/main/laststep'
 
 
@@ -21,13 +20,12 @@ const AppRouter = (): any => {
     <Router>
       <Switch>
         <PublicRoute exact path='/' component={Home} />
-        <PublicRoute exact path='/form' component={Form} />
+        <PublicRoute exact path='/form/:type' component={Form} />
         <PublicRoute exact path='/form2' component={Form2} />
         <PublicRoute exact path='/form3' component={Form3} />
         <PublicRoute exact path='/form4' component={Form4} />
-        <PublicRoute exact path='/form5' component={Form5} />
         <PublicRoute exact path='/login' component={Login} />
-        <PublicRoute exact path='/laststep' component={LastStep} />
+        <PublicRoute exact path='/endform' component={LastStep} />
         <PrivateRoute exact path="/admin"
                         component={Dashboard} />
         <Redirect to="/"></Redirect>

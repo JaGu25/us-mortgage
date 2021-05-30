@@ -19,6 +19,7 @@ const Form2 = () => {
                     <Card icon="refinance" text="Refinance" active={false} />
                     <Card icon="refinance" text="Refinance" active={false} />
                 </div>
+                <h2 className="text-main text-3xl lg:text-5xl font-mabry uppercase font-bold px-4">Residential Loans</h2>
                 <div className="mt-12 lg:mt-16">
                     <Button
                         text="NEXT"

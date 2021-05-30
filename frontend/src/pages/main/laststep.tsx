@@ -2,11 +2,7 @@ import React from 'react'
 import Navbar from '../../components/main/layouts/Navbar'
 import Card from '../../components/main/utils/card/Card'
 
-interface Props {
-
-}
-
-const LastStep = (props: Props) => {
+const LastStep:React.FC = () => {
     return (
         <>
             <Navbar />

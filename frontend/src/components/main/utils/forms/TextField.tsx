@@ -6,7 +6,7 @@ type inputType = 'text' | 'password' | 'email' | 'number'
 interface ITextFieldProps {
   type?: inputType
   id: string,
-  label: string
+  label?: string
   name: string
   errorMessage?: string
   isDisabled?: boolean
@@ -14,26 +14,30 @@ interface ITextFieldProps {
   register?: any
   handleChange?: () => void
   extraStyle?: string
+  placeHolder?: string
 }
 
 const TextField: React.FC<ITextFieldProps> = ({
     type = 'text',
     id,
-    label,
+    label = null,
     name,
     errorMessage,
     isDisabled = false,
     value,
     register = null,
     handleChange,
-    extraStyle = ''
+    extraStyle = '',
+    placeHolder
 }) => {
 
     const hasError: boolean = errorMessage !== undefined;
 
     return (
-        <div className="form my-2 font-mabry w-7/12 lg:w-1/5 main">
-            <label className="block mb-3 text-base text-main" htmlFor={id}>{label}</label>
+        <div className="form font-mabry w-7/12 lg:w-1/5 main">
+            {
+                label  && (<label className="block mb-3 text-base text-main" htmlFor={id}>{label}</label>)
+            }
             {
                 register ? (
                     <input
@@ -54,6 +58,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                     disabled={isDisabled}
                     className={`input ${hasError && ('invalid')} ${extraStyle}`}
                     value={value}
+                    placeholder={placeHolder}
                 />
                 )
             }

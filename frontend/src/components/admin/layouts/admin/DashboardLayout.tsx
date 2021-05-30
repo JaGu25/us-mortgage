@@ -12,7 +12,7 @@ const DashboardLayout:React.FC = ({ children }) => {
     });
 
     return (
-        <div className="flex h-screen bg-gray-200 font-roboto">
+        <div className="flex h-screen bg-gray-200 font-mabry">
             <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
 
             <div className="flex-1 flex flex-col overflow-hidden">

@@ -31,7 +31,7 @@ const Button: React.FC<IButtonProps> = ({
         return (
             <Link to={to} className={`btn-main inline-block justify-around  ${extraStyle}`}>
                 <span className="flex items-center ">
-                    {icon !== undefined && (<Icons icon={icon} style="w-12 fill-current text-white mr-2" />)}
+                    {icon !== undefined && (<Icons icon={icon} myStyle="w-12 fill-current text-white mr-2" />)}
                     {text}
                 </span>
             </Link>
@@ -43,6 +43,7 @@ const Button: React.FC<IButtonProps> = ({
             type={type}
             className={`btn-main ${extraStyle}`}
             disabled={isDisabled}
+            onClick={handleClick}
         >
             {text}
             {

@@ -29,7 +29,7 @@ const Form4 = () => {
                 <div className="flex flex-col items-center justify-center my-12 lg:mt-24 flex-wrap">
                     <Radio text="3 - 6 Months" />
                     <Radio text="3 - 6 Months" active={true} />
-                    <Select options={options}/>
+                    {/* <Select options={options}/> */}
                 </div>
                 <div className="mt-12 lg:mt-16">
                     <Button

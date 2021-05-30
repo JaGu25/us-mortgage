@@ -12,12 +12,12 @@ const ProgressBar: React.FC<IProgressBarProps> = ({
             <p className="font-gobold my-1 text-xl">{percentaje}%</p>
             <div className="w-3/4 lg:w-2/5 overflow-hidden h-7 mb-1 text-xs flex rounded-sm" style={{ backgroundColor: "#e3e3e3" }}>
                 <div style={{ width: `${percentaje}%` }} 
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-main transition-all ease-in-out duration-700">
+                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-main transition-all ease-in-out duration-500">
                 </div>
             </div>
             <div className="w-3/4 lg:w-2/5 overflow-hidden h-1 mb-1 text-xs flex rounded-sm" style={{ backgroundColor: "#e3e3e3" }}>
                 <div style={{ width: `${percentaje}%` }} 
-                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-main transition-all ease-in-out duration-700">
+                    className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-main transition-all ease-in-out duration-500">
                 </div>
             </div>
         </div>

@@ -2,9 +2,9 @@ import React from 'react'
 import Navbar from '../../components/main/layouts/Navbar'
 import Button from '../../components/main/utils/buttons/Button'
 import mainImg from './../../assets/imgs/main.png'
-import smileIcon from './../../assets/imgs/icons/commercial.svg'
 
 const Home: React.FC = () => {
+
     return (
         <div className="relative">
             <Navbar />
@@ -35,19 +35,19 @@ const Home: React.FC = () => {
                     <div className="text-center lg:text-left flex flex-col lg:flex-row px-10 lg:p-0">
                         <Button
                             text="RESIDENTIAL"
-                            to="/form"
+                            to="/form/residential"
                             icon="home"
                         />
                         <Button
                             text="COMMERCIAL"
-                            to="/form"
+                            to="/form/commercial"
                             icon="commercial"
                         />
                     </div>
                 </div>
                 <div className="w-full lg:w-1/2 px-4 pb-8 lg:p-0">
                     <div className="border-4 border-shadow rounded-bl-4xl relative z-40 bg-white w-full">
-                        <img src={mainImg} alt="Main Image" className="m-4 pr-8 w-full"/>
+                        <img src={mainImg} alt="Main Page" className="m-4 pr-8 w-full"/>
                     </div>
                 </div>
             </section>
