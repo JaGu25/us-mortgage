@@ -14,7 +14,7 @@ export interface IFormObject {
     first_name: string
     last_name: string
     email:string
-    phone_number: string
+    phone_number?: any
     password: string
     completed: boolean
 }
@@ -33,7 +33,7 @@ export const initialForm: IFormObject = {
     first_name: '',
     last_name: '',
     email:'',
-    phone_number: '',
+    phone_number: null,
     password: '',
     completed: false
 }

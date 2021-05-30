@@ -46,6 +46,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                         name={name}
                         disabled={isDisabled}
                         {...register(name)}
+                        placeholder={placeHolder}
                         className={`input ${hasError && ('invalid')} ${extraStyle}`}
                         autoComplete="new-password"
                     />
