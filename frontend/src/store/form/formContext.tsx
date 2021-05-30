@@ -1,15 +1,11 @@
 import React, { useReducer } from 'react'
 import FormReducer from './formReducer'
 import { types } from '../types'
-import { IFormObject, initialForm } from './interfaces';
+import { IFormObject, form } from './interfaces';
 
 interface Props {
     children: React.ReactNode
 }
-
-const form: IFormObject = localStorage.getItem('form') ? JSON.parse(localStorage.getItem('form') ?? '{}') : null
-
-const initialState: IFormObject = form || initialForm;
 
 interface IForm {
     form: IFormObject,
@@ -18,14 +14,14 @@ interface IForm {
 }
 
 export const FormContext = React.createContext<IForm>({
-    form: initialState,
+    form,
     updateForm: () => { },
     resetForm: () => { },
 })
 
 const FormProvider = ({ children }: Props): any => {
 
-    const [state, dispatch] = useReducer(FormReducer, initialState)
+    const [state, dispatch] = useReducer(FormReducer, form)
 
     const updateForm = (field: any): void => {
         dispatch({
@@ -43,7 +39,7 @@ const FormProvider = ({ children }: Props): any => {
     return (
         <FormContext.Provider
             value={{
-                form: state,
+                form: state.form,
                 updateForm,
                 resetForm
             }}

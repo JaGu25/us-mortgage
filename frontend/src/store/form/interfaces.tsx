@@ -1,4 +1,6 @@
 
+type PropertyUse = 'primary_recidence' | 'secondary_home' | 'investment property' | ''
+type FirstTimeBuyer = "yes" | "no" | ''
 
 export interface IFormObject {
     type: string,
@@ -8,6 +10,11 @@ export interface IFormObject {
     month_start: string
     yeart_start: string
     annual_revenue: string
+    residential_loans: string,
+    home_description: string,
+    property_use: PropertyUse,
+    plan_to_purchase: string
+    first_time_buyer: FirstTimeBuyer,
     credit_profile: string
     business_name: string
     business_code: string
@@ -19,7 +26,7 @@ export interface IFormObject {
     completed: boolean
 }
 
-export const initialForm: IFormObject = {
+export let form: IFormObject = {
     type: '',
     business_own: '',
     money_need: '',
@@ -27,6 +34,11 @@ export const initialForm: IFormObject = {
     month_start: '',
     yeart_start: '',
     annual_revenue: '',
+    residential_loans: '',
+    home_description: '',
+    property_use: '',
+    plan_to_purchase: '',
+    first_time_buyer: '',
     credit_profile: '',
     business_name: '',
     business_code: '',
