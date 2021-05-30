@@ -1,15 +1,44 @@
-import React, { useImperativeHandle, useState } from 'react'
+import { yupResolver } from '@hookform/resolvers/yup'
+import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { IOption } from '../../../../helpers/interfaces'
+import { FormContext } from '../../../../store/form/formContext'
 import Select from '../../utils/forms/Select'
 import Subtitle from '../../utils/texts/Subtitle'
+import * as yup from 'yup'
+
+interface IInputs {
+    finance_for: string
+}
+
+const schema = yup.object().shape({
+    finance_for: yup
+        .string()
+        .required('This field is required*'),
+})
 
 const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
 
-    const [stateIsValid, setStateIsValid] = useState(false)
+    const { updateForm, form: { finance_for } } = useContext(FormContext)
+
+    const { register, trigger, watch, formState: { errors }, getValues, setValue } = useForm<IInputs>({
+        mode: 'onBlur',
+        resolver: yupResolver(schema)
+    })
+
+    useEffect(() => {
+        if (finance_for != '') {
+            setValue('finance_for', finance_for)
+        }
+    }, [])
 
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            return true
+        validateStep: async (): Promise<boolean> => {
+            const valid = await trigger();
+            const { finance_for } = getValues();
+            console.log(finance_for);
+            updateForm({ field: 'finance_for', value: finance_for })
+            return valid ? true : false;
         }
     }));
 
@@ -31,7 +60,14 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
         <>
             <h2 className="title-3">Business Loans</h2>
             <Subtitle text="What are you getting financing for?" />
-            <Select firstValue="Select one" options={options} extraStyle="lg:w-2/12" />
+            <Select 
+            firstValue="Select one" 
+            options={options} 
+            extraStyle="lg:w-2/12"
+            register={register} 
+            errorMessage={errors.finance_for?.message} 
+            name="finance_for"
+            />
             <p className="font-mabry text-main font-light text-base mt-5">Please select your purpose</p>
         </>
     )

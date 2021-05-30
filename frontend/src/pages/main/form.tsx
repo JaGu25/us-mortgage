@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router-dom'
 import Navbar from '../../components/main/layouts/Navbar'
 import Button from '../../components/main/utils/buttons/Button'
 import ProgressBar from '../../components/main/utils/progressbar/ProgressBar'
 import { ISteps } from '../../helpers/interfaces'
 import { CommercialSteps, ResidentialSteps } from '../../helpers/type_steps'
+import { FormContext } from '../../store/form/formContext'
 
 type TypeSteps = 'residential' | 'commercial'
 
@@ -19,14 +20,16 @@ interface ICurrentStep {
 
 const Form: React.FC = () => {
 
-    const [stepper, setStepper] = useState<ISteps[]>([]);
-    const [currentStep, setCurrentStep] = useState<ICurrentStep>();
-    const [percentaje, setPercentaje] = useState(0);
+    const [stepper, setStepper] = useState<ISteps[]>([])
+    const [currentStep, setCurrentStep] = useState<ICurrentStep>()
+    const [percentaje, setPercentaje] = useState(0)
     const { type }: TypeForm = useParams();
     const history = useHistory()
-    const refStep = React.createRef();
+    const refStep = React.createRef()
+    const { updateForm } = useContext(FormContext)
 
     useEffect(() => {
+        updateForm({ field: 'type', value: type })
         switch (type) {
             case 'commercial':
                 setStepper(CommercialSteps)
@@ -41,22 +44,23 @@ const Form: React.FC = () => {
         }
     }, [])
 
-    const changeCurrentStep = (changeStep: number) => {
+    const changeCurrentStep = async (changeStep: number) => {
         let step: number = currentStep?.step || 0;
         const length: number = stepper.length;
-        if ((step + changeStep) != length) {
-            if (changeStep > 0) {
-                if (isCurrentStepValid()) {
+        if (changeStep > 0) {
+            if (await isCurrentStepValid()) {
+                if ((step + changeStep) != length) {
                     setCurrentStep({ step: (step + changeStep), stepObject: stepper[(step + changeStep)] });
                     let change = stepper.map((e, i) => (i === step ? { ...e, isCompleted: true } : e));
                     setStepper(change);
                     calculatePercentaje(change);
                 }
-            } else {
-                setCurrentStep({ step: (step + changeStep), stepObject: stepper[(step + changeStep)] });
+                else {
+                    history.push('/endform')
+                }
             }
         } else {
-            history.push('/endform')
+            setCurrentStep({ step: (step + changeStep), stepObject: stepper[(step + changeStep)] });
         }
     }
 
@@ -68,9 +72,9 @@ const Form: React.FC = () => {
         }
     }
 
-    const isCurrentStepValid = (): boolean => {
+    const isCurrentStepValid = async (): Promise<boolean> => {
         {/*// @ts-ignore */ }
-        return refStep.current.validateStep();
+        return await refStep.current.validateStep();
     }
 
     const StepComponent = () => {
@@ -83,16 +87,16 @@ const Form: React.FC = () => {
             <Navbar />
             {
                 currentStep && (
-                    <section className="container mx-auto text-center py-8" style={{ height: "calc(100vh - 250px)"}}>
+                    <section className="container mx-auto text-center py-8" style={{ height: "calc(100vh - 250px)" }}>
                         {
                             (currentStep.stepObject.showProgressBar && (<ProgressBar percentaje={percentaje} />))
                         }
                         {
-                            (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4" style={{minHeight: "50%"}}>
+                            (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4" style={{ minHeight: "50%" }}>
                                 {StepComponent()}
                             </div>)
                         }
-                        <div className="mt-16 pb-4 flex flex-col items-center" style={{minHeight: "25%"}}>
+                        <div className="mt-16 pb-4 flex flex-col items-center" style={{ minHeight: "25%" }}>
                             <Button
                                 text="NEXT"
                                 handleClick={() => changeCurrentStep(1)}
