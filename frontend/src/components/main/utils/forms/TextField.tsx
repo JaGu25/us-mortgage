@@ -1,5 +1,6 @@
 
 import React from 'react'
+import MessageError from '../texts/MessageError';
 
 type inputType = 'text' | 'password' | 'email' | 'number'
 
@@ -10,7 +11,7 @@ interface ITextFieldProps {
     name: string
     errorMessage?: string
     isDisabled?: boolean
-    value: string
+    value?: any
     register?: any
     handleChange?: () => void
     extraStyle?: string
@@ -24,7 +25,6 @@ const TextField: React.FC<ITextFieldProps> = ({
     name,
     errorMessage,
     isDisabled = false,
-    value,
     register = null,
     handleChange,
     extraStyle = '',
@@ -47,7 +47,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                         disabled={isDisabled}
                         {...register(name)}
                         className={`input ${hasError && ('invalid')} ${extraStyle}`}
-                        value={value}
+                        autoComplete="new-password"
                     />
                 )
                     : (
@@ -56,13 +56,13 @@ const TextField: React.FC<ITextFieldProps> = ({
                             type={type}
                             name={name}
                             disabled={isDisabled}
-                            className={`input ${hasError && ('invalid')} ${extraStyle}`}
-                            value={value}
                             placeholder={placeHolder}
+                            className={`input ${hasError && ('invalid')} ${extraStyle}`}
+                            autoComplete="new-password"
                         />
                     )
             }
-            <span className="text-red-500 block mt-2">{errorMessage}</span>
+             <MessageError text={errorMessage || ''} />
         </div>
     )
 }
