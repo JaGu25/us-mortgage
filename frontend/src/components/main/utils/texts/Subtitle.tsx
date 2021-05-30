@@ -8,7 +8,7 @@ const Subtitle: React.FC<IProps> = ({
     text
 }) => {
     return (
-        <h2 className="font-mabry text-main text-2xl mb-10">
+        <h2 className="font-mabry text-main text-xl lg:text-2xl mb-4 mt-4">
             {text}
         </h2>
     )

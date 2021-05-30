@@ -1,0 +1,4 @@
+
+.title-3 {
+    @apply text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-10 lg:mb-20;
+}

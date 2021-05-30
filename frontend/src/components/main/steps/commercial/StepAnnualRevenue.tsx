@@ -14,7 +14,7 @@ const StepAnnualRevenue =  React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-20">Business Loans</h2>
+            <h2 className="title-3">Business Loans</h2>
             <Subtitle text="Whats's your annual revenue?"/>
             <TextField id="annual_revenue" name="annual_revenue" type="number"  value="1"  />
         </>

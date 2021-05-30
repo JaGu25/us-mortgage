@@ -1,6 +1,10 @@
 
+.card-container {
+    @apply flex flex-col items-center justify-center sm:flex-row my-4 lg:my-12 lg:mt-8 flex-wrap -mb-8 lg:mb-0;
+}
+
 .card {
-    @apply relative w-40 font-mabry border-main border-4 flex items-center justify-center rounded-2xl py-6 px-2 cursor-pointer m-4 transition-all ease-in-out duration-300;
+    @apply relative w-40 font-mabry border-main border-4 flex items-center justify-center rounded-2xl py-6 px-2 cursor-pointer mx-3 my-6 lg:m-4 transition-all ease-in-out duration-300;
 }
 
 .card-chip {

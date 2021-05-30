@@ -29,9 +29,9 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-20">Business Loans</h2>
+            <h2 className="title-3">Business Loans</h2>
             <Subtitle text="What are you getting financing for?" />
-            <Select firstValue="Select one" options={options} />
+            <Select firstValue="Select one" options={options} extraStyle="lg:w-2/12" />
             <p className="font-mabry text-main font-light text-base mt-5">Please select your purpose</p>
         </>
     )

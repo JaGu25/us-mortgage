@@ -15,7 +15,7 @@ const StepBusinessOwn =  React.forwardRef<unknown>((props, ref: any) => {
     return (
         <>
             <Subtitle text="What type of business do you own?"/>
-            <div className="flex flex-col items-center justify-center sm:flex-row my-12 lg:mt-8 flex-wrap">
+            <div className="card-container">
                 <Card icon="refinance" text="Home Purchase" active={false} />
                 <Card icon="refinance" text="Refinance" active={false} />
                 <Card icon="commercial" text="Refinance" active={false} />

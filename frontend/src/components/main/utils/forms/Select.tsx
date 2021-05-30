@@ -7,7 +7,7 @@ const Select: React.FC<ISelectProps> = ({
     firstValue
 }) => {
     return (
-        <select className={`select my-2 ${extraStyle}`}>
+        <select className={`select my-2 w-8/12 sm:w-6/12 ${extraStyle}`}>
             <option value="default" selected>{firstValue}</option>
             {
                 options.map((e) => (

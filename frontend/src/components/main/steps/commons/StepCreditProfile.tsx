@@ -15,7 +15,7 @@ const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
     return (
         <div>
             <Subtitle text="Your Credit Profile" />
-            <div className="flex flex-col items-center justify-center sm:flex-row my-12 lg:mt-8 flex-wrap">
+            <div className="card-container">
                 <Card icon="smile_good" text="" twoWords={['Excellent', '720+']} extraChipStyle="card-chip-add" active={false} />
                 <Card icon="smile_good" text="" twoWords={['Good', '660-719']} extraChipStyle="card-chip-add" active={false} />
                 <Card icon="smile_good" text="" twoWords={['Avg.', '620-659']} extraChipStyle="card-chip-add" active={false} />

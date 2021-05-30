@@ -9,6 +9,7 @@
 @import "./../../components/main/utils/buttons/index.css"; 
 @import "./../../components/main/utils/card/index.css"; 
 @import "./../../components/main/utils/forms/index.css"; 
+@import "./general.css"; 
 
 @import "tailwindcss/utilities";
 

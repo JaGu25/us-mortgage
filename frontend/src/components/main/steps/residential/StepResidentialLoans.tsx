@@ -14,7 +14,7 @@ const StepResidentialLoans =  React.forwardRef<unknown>((props, ref: any) => {
     return (
         <>
             <h2 className="text-main text-3xl lg:text-5xl font-mabry uppercase font-bold px-4">Residential Loans</h2>
-            <div className="flex flex-col items-center justify-center sm:flex-row my-12 lg:mt-12 flex-wrap">
+            <div className="card-container">
                 <Card icon="home" text="Home Purchase" active={false} />
                 <Card icon="refinance" text="Refinance" active={false} />
             </div>

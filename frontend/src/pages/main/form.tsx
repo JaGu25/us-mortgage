@@ -83,16 +83,16 @@ const Form: React.FC = () => {
             <Navbar />
             {
                 currentStep && (
-                    <section className="container mx-auto text-center py-12 lg:py-24">
+                    <section className="container mx-auto text-center py-8" style={{ height: "calc(100vh - 250px)"}}>
                         {
                             (currentStep.stepObject.showProgressBar && (<ProgressBar percentaje={percentaje} />))
                         }
                         {
-                            (<div className="mt-16 flex flex-col items-center">
+                            (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4" style={{minHeight: "50%"}}>
                                 {StepComponent()}
                             </div>)
                         }
-                        <div className="mt-12 lg:mt-16 flex flex-col items-center">
+                        <div className="mt-16 pb-4 flex flex-col items-center" style={{minHeight: "25%"}}>
                             <Button
                                 text="NEXT"
                                 handleClick={() => changeCurrentStep(1)}

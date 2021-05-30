@@ -14,7 +14,7 @@ const StepMoneyNeed =  React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-20">Business Loans</h2>
+            <h2 className="title-3">Business Loans</h2>
             <Subtitle text="How much money do you need?"/>
             <TextField id="way_reach_you" name="way_reach_you" type="text"  value="1"  />
         </>
