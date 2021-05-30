@@ -10,6 +10,7 @@ interface ICardProps {
     extraCardStyle?: string
     chip?: boolean
     twoWords?: string[]
+    handleClick?: () => void
 }
 
 const Card: React.FC<ICardProps> = ({
@@ -19,7 +20,8 @@ const Card: React.FC<ICardProps> = ({
     extraChipStyle = '',
     extraCardStyle = '',
     chip = true,
-    twoWords = null
+    twoWords = null,
+    handleClick
 }) => {
 
     const setActiveHover = (e: MouseEvent<HTMLElement>) => {
@@ -38,6 +40,8 @@ const Card: React.FC<ICardProps> = ({
         <div className={`card ${active ? 'card-active' : ''} ${extraCardStyle}`}
             onMouseEnter={setActiveHover}
             onMouseLeave={setInactiveHover}
+            onClick={handleClick}
+            id={icon}
         >
             <Icons
                 icon={icon}

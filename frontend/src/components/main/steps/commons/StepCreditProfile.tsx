@@ -16,11 +16,11 @@ const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
         <div>
             <Subtitle text="Your Credit Profile" />
             <div className="card-container">
-                <Card icon="smile_good" text="" twoWords={['Excellent', '720+']} extraChipStyle="card-chip-add" active={false} />
+                <Card icon="smile_excelent" text="" twoWords={['Excellent', '720+']} extraChipStyle="card-chip-add" active={false} />
                 <Card icon="smile_good" text="" twoWords={['Good', '660-719']} extraChipStyle="card-chip-add" active={false} />
-                <Card icon="smile_good" text="" twoWords={['Avg.', '620-659']} extraChipStyle="card-chip-add" active={false} />
-                <Card icon="smile_good" text="" twoWords={['Below Avg', '580-619']} extraChipStyle="card-chip-add" active={false} />
-                <Card icon="smile_good" text="" twoWords={['Poor', '>580']} extraChipStyle="card-chip-add" active={false} />
+                <Card icon="smile_avg" text="" twoWords={['Avg.', '620-659']} extraChipStyle="card-chip-add" active={false} />
+                <Card icon="smile_below" text="" twoWords={['Below Avg', '580-619']} extraChipStyle="card-chip-add" active={false} />
+                <Card icon="smile_poor" text="" twoWords={['Poor', '>580']} extraChipStyle="card-chip-add" active={false} />
             </div>
         </div>
     )

@@ -1,8 +1,9 @@
 import React from "react";
 
 export type iconType = 'commercial' | 'home' | 'refinance' | 'email' |
-                        'smile_good'
-
+                        'smile_good' | 'solo_owner' | 'partnership' | 'limited_liability' |
+                        'corporation' | 'smile_poor' | 'smile_below' | 'smile_avg' | 'smile_excelent'
+ 
 export interface IOption {
     key: string
     value: string

@@ -14,7 +14,6 @@
 
 .card-chip-add {
     @apply -bottom-7 leading-4;
-    max-width:6rem;
 }
 
 .card-active {
