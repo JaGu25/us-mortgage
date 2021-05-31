@@ -37,7 +37,7 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
     useEffect(() => {
         let auxOptions = [{ field: 'plan_to_purchase', value: '', text: '', selected: false }];
         switch (property_use) {
-            case 'primary_recidence':
+            case 'primary_residence':
                 auxOptions = optionsPrimary;
                 break;
             case 'secondary_home':

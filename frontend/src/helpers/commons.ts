@@ -8,7 +8,7 @@ export const monthsOptions = [
     { key: '3', value: "April" },
     { key: '4', value: "May" },
     { key: '5', value: "June" },
-    { key: '6', value: "Yuly" },
+    { key: '6', value: "July" },
     { key: '7', value: "August" },
     { key: '8', value: "September" },
     { key: '9', value: "October" },

@@ -264,7 +264,7 @@ const Icons: React.FC<IIconsProps> = ({
 					</switch>
 				</svg>
 			)
-		case 'smile_good':
+		case 'smile_excelent':
 			return (
 				<svg version="1.1"
 					xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"
@@ -526,7 +526,7 @@ const Icons: React.FC<IIconsProps> = ({
 					</switch>
 				</svg>
 			)
-		case 'smile_avg':
+		case 'smile_good':
 			return (
 				<svg version="1.1"
 					xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"
@@ -554,7 +554,7 @@ const Icons: React.FC<IIconsProps> = ({
 					</switch>
 				</svg>
 			)
-		case 'smile_excelent':
+		case 'smile_avg':
 			return (
 				<svg version="1.1"
 					xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"
@@ -769,7 +769,7 @@ const Icons: React.FC<IIconsProps> = ({
 				</svg>
 
 			)
-		case 'primary_recidence':
+		case 'primary_residence':
 			return (
 				<svg version="1.1"
 					xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 200 200"

@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useImperativeHandle } from 'react'
 import { monthsOptions, yearOptions } from '../../../../helpers/commons'
 import { FormContext } from '../../../../store/form/formContext'
-import { IOption } from '../../../../helpers/interfaces'
 import Select from '../../utils/forms/Select'
 import Subtitle from '../../utils/texts/Subtitle'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm, useFormContext } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 
 interface IInputs {
     month_start: string

@@ -1,5 +1,5 @@
 
-type PropertyUse = 'primary_recidence' | 'secondary_home' | 'investment_property' | ''
+type PropertyUse = 'primary_residence' | 'secondary_home' | 'investment_property' | ''
 type FirstTimeBuyer = "yes" | "no" | ''
 
 export interface IFormObject {
