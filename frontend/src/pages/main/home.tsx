@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from '../../components/main/layouts/Footer'
 import Navbar from '../../components/main/layouts/Navbar'
 import Button from '../../components/main/utils/buttons/Button'
 import mainImg from './../../assets/imgs/main.png'
@@ -8,9 +9,9 @@ const Home: React.FC = () => {
     return (
         <div className="relative">
             <Navbar />
-            <section className="container mx-auto flex flex-col-reverse lg:flex-row py-14 relative">
+            <section className="container mx-auto flex flex-col-reverse lg:flex-row py-14 relative mt-0 lg:px-8 xl:mt-4">
                 <div className="w-full lg:w-1/2">
-                    <h1 className="text-main  text-3xl lg:text-7xl font-light tracking-widest text-center lg:text-left">
+                    <h1 className="text-main  text-3xl lg:text-5xl xl:text-7xl font-light tracking-widest text-center lg:text-left">
                         <span className="block">
                             <span className="font-semibold mr-4">
                                 GET
@@ -30,7 +31,7 @@ const Home: React.FC = () => {
                             DREAMS
                         </span>
                     </h1>
-                    <p className="text-seconday font-light py-12 px-8 text-center lg:text-left lg:pl-0 lg:pr-80 text-base lg:text-xl uppercase">At US Mortgage Wholesale, we strive to put our experience, knowledge,
+                    <p className="text-seconday font-light py-12 px-8 text-center lg:text-left lg:pl-0 lg:pr-20 xl:pr-80 text-base lg:text-xl uppercase">At US Mortgage Wholesale, we strive to put our experience, knowledge,
                         and resources as our top priority serving our clients.</p>
                     <div className="text-center lg:text-left flex flex-col sm:flex-row sm:justify-center lg:justify-start px-10 lg:p-0">
                         <Button
@@ -51,7 +52,8 @@ const Home: React.FC = () => {
                     </div>
                 </div>
             </section>
-            <div className="absolute top-60 right-0  h-16 w-1/2 bg-shadow z-10 rounded-sm hidden lg:block"></div>
+            <Footer/>
+            <div className="absolute top-72 right-0 h-16 w-1/2 bg-shadow z-10 rounded-sm hidden lg:block"></div>
         </div>
     )
 }

@@ -22,6 +22,9 @@ module.exports = {
         },
         hover: {
           DEFAULT: "#313D6D"
+        },
+        myred: {
+          DEFAULT: "#c00000"
         }
       },
       borderRadius: {
