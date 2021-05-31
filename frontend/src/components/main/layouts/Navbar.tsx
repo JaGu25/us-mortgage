@@ -8,7 +8,9 @@ const Navbar: React.FC = () => {
         <div className="font-light">
             <div className="container mx-auto px-4 lg:p-0">
                 <nav className="flex px-0 lg:px-4 xl:px-0 justify-between items-center py-4">
-                    <img src={logoImg} alt="Logo US Mortgage" className="w-36 lg:w-60" />
+                    <Link to='/'>
+                        <img src={logoImg} alt="Logo US Mortgage" className="w-36 lg:w-60" />
+                    </Link>
                     <ul className="flex justify-evenly">
                         <li>
                             <SocialMedia icon="fab fa-facebook-square" href="https://fontawesome.com/v5.15/icons/youtube?style=brands" />

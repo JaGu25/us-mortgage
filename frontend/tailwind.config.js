@@ -19,6 +19,9 @@ module.exports = {
         },
         shadow: {
           DEFAULT: "#70768d"
+        },
+        hover: {
+          DEFAULT: "#313D6D"
         }
       },
       borderRadius: {
