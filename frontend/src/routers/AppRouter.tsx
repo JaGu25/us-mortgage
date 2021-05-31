@@ -9,9 +9,6 @@ import Home from '../pages/main/home'
 import Login from '../pages/admin/auth/login'
 import Dashboard from '../pages/admin/dashboard/dashboard'
 import Form from '../pages/main/form'
-import Form2 from '../pages/main/form2'
-import Form3 from '../pages/main/form3'
-import Form4 from '../pages/main/form4'
 import LastStep from '../pages/main/laststep'
 
 
@@ -21,9 +18,6 @@ const AppRouter = (): any => {
       <Switch>
         <PublicRoute exact path='/' component={Home} />
         <PublicRoute exact path='/form/:type' component={Form} />
-        <PublicRoute exact path='/form2' component={Form2} />
-        <PublicRoute exact path='/form3' component={Form3} />
-        <PublicRoute exact path='/form4' component={Form4} />
         <PublicRoute exact path='/login' component={Login} />
         <PublicRoute exact path='/endform' component={LastStep} />
         <PrivateRoute exact path="/admin"

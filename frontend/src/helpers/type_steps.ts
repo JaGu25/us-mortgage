@@ -12,6 +12,10 @@ import StepFullName from "../components/main/steps/commons/StepFullName"
 import StepEmailAddress from "../components/main/steps/commons/StepEmailAddress"
 import StepBestWayReachYou from "../components/main/steps/commercial/StepBestWayReachYou"
 import StepConfirmation from "../components/main/steps/commons/StepConfirmation"
+import StepHomeDescription from "../components/main/steps/residential/StepHomeDescription"
+import StepPropertyUse from "../components/main/steps/residential/StepPropertyUse"
+import StepFirstTimeBuyer from "../components/main/steps/residential/StepFirstTimeBuyer"
+import StepPlanPurchase from "../components/main/steps/residential/StepPlanPurchase"
 
 export const CommercialSteps: ISteps[] = [
     { component: StepBusinessOwn, showProgressBar: true, isCompleted: false },
@@ -30,5 +34,13 @@ export const CommercialSteps: ISteps[] = [
 
 
 export const ResidentialSteps: ISteps[] = [
-    {   component: StepResidentialLoans, showProgressBar: false, isCompleted: false }
+    { component: StepResidentialLoans, showProgressBar: false, isCompleted: false },
+    { component: StepHomeDescription, showProgressBar: true, isCompleted: false },
+    { component: StepPropertyUse, showProgressBar: true, isCompleted: false },
+    { component: StepPlanPurchase, showProgressBar: true, isCompleted: false },
+    { component: StepFirstTimeBuyer, showProgressBar: true, isCompleted: false },
+    { component: StepCreditProfile, showProgressBar: true, isCompleted: false },
+    { component: StepFullName, showProgressBar: true, isCompleted: false },
+    { component: StepEmailAddress, showProgressBar: true, isCompleted: false },
+    { component: StepConfirmation, showProgressBar: true, isCompleted: false },
 ]

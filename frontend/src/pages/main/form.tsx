@@ -61,6 +61,7 @@ const Form: React.FC = () => {
                 }
             }
         } else {
+            await isCurrentStepValid()
             setCurrentStep({ step: (step + changeStep), stepObject: stepper[(step + changeStep)] });
         }
     }
@@ -93,7 +94,7 @@ const Form: React.FC = () => {
                             (currentStep.stepObject.showProgressBar && (<ProgressBar percentaje={percentaje} />))
                         }
                         {
-                            (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4" style={{ minHeight: "50%" }}>
+                            (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4" style={{ minHeight: currentStep.stepObject.showProgressBar ? "50%" : "75%"}}>
                                 {StepComponent()}
                             </div>)
                         }

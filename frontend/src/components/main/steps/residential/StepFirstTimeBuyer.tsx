@@ -1,20 +1,21 @@
-import React, { useState, useImperativeHandle, useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
 import { FormContext } from '../../../../store/form/formContext'
 import Card from '../../utils/card/Card'
+import Subtitle from '../../utils/texts/Subtitle'
 
-const StepResidentialLoans = React.forwardRef<unknown>((props, ref: any) => {
+const StepFirstTimeBuyer = React.forwardRef<unknown>((props, ref: any) => {
 
-    const { updateForm, form: { residential_loans } } = useContext(FormContext)
+    const { updateForm, form: { first_time_buyer } } = useContext(FormContext)
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'residential_loans', value: 'home_purchase', selected: false },
-        { field: 'residential_loans', value: 'refinance', selected: false },
+        { field: 'first_time_buyer', value: 'yes', selected: false },
+        { field: 'first_time_buyer', value: 'no', selected: false },
     ])
 
     useEffect(() => {
-        if (residential_loans != '') {
-            setCardsActives(cardActives.map((e) => e.value === residential_loans ? { ...e, selected: true } : e))
+        if(first_time_buyer != ''){
+            setCardsActives(cardActives.map((e) => e.value === first_time_buyer ? { ...e, selected: true } : e))
         }
     }, [])
 
@@ -41,15 +42,14 @@ const StepResidentialLoans = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="text-main text-3xl lg:text-5xl font-mabry uppercase font-bold px-4">Residential Loans</h2>
+            <Subtitle text="Are you a first-time home buyer?" />
             <div className="card-container">
-                <Card icon="home" text="Home Purchase" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
-                <Card icon="refinance" text="Refinance" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
+                <Card icon="yes" text="Yes" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
+                <Card icon="no" text="No" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
             </div>
             { error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}
         </>
     )
 })
 
-
-export default StepResidentialLoans
+export default StepFirstTimeBuyer
