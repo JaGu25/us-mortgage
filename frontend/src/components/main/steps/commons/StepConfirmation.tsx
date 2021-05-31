@@ -105,15 +105,15 @@ const StepConfirmation = React.forwardRef<unknown>((props, ref: any) => {
                     errorMessage={errors.repeat_password?.message}
                     register={register}
                 />
-                <div className="w-3/4 lg:w-1/2 mt-8 text-main font-light rounded-sm py-5 px-3 lg:px-10" style={{ backgroundColor: "#e3e3e3" }}>
+                <div className="w-3/4 lg:w-1/2 mt-8 text-main font-light rounded-sm py-5 px-3 lg:px-6" style={{ backgroundColor: "#e3e3e3" }}>
                     <label className="flex items-center ml-3">
                         <input type="checkbox"
                             {...register('shared_data')}
                             className="form-checkbox border-main border bg-gray-100 text-main"
                         />
-                        <span className="ml-2 text-sm lg:text-lg font-medium cursor-pointer">I agree that my data can be used for the purposes noted below.</span>
+                        <span className="ml-2 text-sm md:text-base font-medium cursor-pointer text-left">I agree that my data can be used for the purposes noted below.</span>
                     </label>
-                    <p className="text-left ml-10 mt-2 text-sm">
+                    <p className="text-left ml-10 mt-2 text-xs md:text-sm">
                         By checking the box, you agree that we can share your personal data and contact info with
                         third parties like our mortgage partners, partner companies and affiliates.
                         You also agree that these parties can use your personal data and contact info for

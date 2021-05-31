@@ -18,9 +18,9 @@ const Radio:React.FC<IRadioProps> = ({
         >
             {
                 active ? (<i className="fas fa-circle text-xs mr-3 text-white"></i>)
-                : ( <i className="far fa-circle text-xs mr-3"></i>)
+                : ( <i className="far fa-circle text-xs mr-3 text-main"></i>)
             }           
-            <span className="text-left">{text}</span>
+            <span className={`text-left ${ active ? 'text-white' : 'text-main'}`}>{text}</span>
         </div>
     )
 }

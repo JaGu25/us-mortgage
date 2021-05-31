@@ -44,10 +44,10 @@ const StepBusinessCode =  React.forwardRef<unknown>((props, ref: any) => {
     return (
         <>
             <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="Businnes ZIP Code"/>
+            <Subtitle text="Business ZIP Code"/>
             <TextField
                 id="business_code"
-                type="text"
+                type="number"
                 name="business_code"
                 errorMessage={errors.business_code?.message}
                 register={register}

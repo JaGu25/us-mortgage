@@ -40,7 +40,9 @@ export const ResidentialSteps: ISteps[] = [
     { component: StepPlanPurchase, showProgressBar: true, isCompleted: false },
     { component: StepFirstTimeBuyer, showProgressBar: true, isCompleted: false },
     { component: StepCreditProfile, showProgressBar: true, isCompleted: false },
+    { component: StepBusinessCode, showProgressBar: true, isCompleted: false },
     { component: StepFullName, showProgressBar: true, isCompleted: false },
     { component: StepEmailAddress, showProgressBar: true, isCompleted: false },
+    { component: StepBestWayReachYou, showProgressBar: true, isCompleted: false },
     { component: StepConfirmation, showProgressBar: true, isCompleted: false },
 ]

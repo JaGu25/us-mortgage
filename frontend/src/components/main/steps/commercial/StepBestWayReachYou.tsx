@@ -52,7 +52,6 @@ const StepBestWayReachYou = React.forwardRef<unknown>((props, ref: any) => {
                     id="phone_number"
                     type="text"
                     name="phone_number"
-                    placeHolder="+51 92311232"
                     register={register}
                 />
             </div>
