@@ -63,7 +63,7 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
             <Select 
             firstValue="Select one" 
             options={options} 
-            extraStyle="lg:w-2/12"
+            extraStyle="lg:w-2/12 xl:w-1/5 w-3/4"
             register={register} 
             errorMessage={errors.finance_for?.message} 
             name="finance_for"

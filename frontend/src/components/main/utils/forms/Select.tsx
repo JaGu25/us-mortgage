@@ -13,7 +13,7 @@ const Select: React.FC<ISelectProps> = ({
 
     return (
         <>
-            <select className={`select my-2 w-8/12 sm:w-6/12 ${extraStyle}`}
+            <select className={`select my-2 sm:w-6/12 md:w-5/12 lg:w-3/12 xl:w-2/12 ${extraStyle}`}
                 name={name}
                 {...register(name)}
             >
