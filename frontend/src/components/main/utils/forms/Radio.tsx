@@ -13,7 +13,7 @@ const Radio:React.FC<IRadioProps> = ({
 }) => {
     return (
         <div 
-            className={ active ? "radio-active" : "radio"}
+            className={`${active ? "radio-active" : "radio"} w-9/12 sm:w-6/12 lg:w-1/4 xl:w-1/5 mx-8`}
             onClick={handleClick}
         >
             {

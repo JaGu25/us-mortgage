@@ -32,7 +32,7 @@ const Home: React.FC = () => {
                     </h1>
                     <p className="text-seconday font-light py-12 px-8 text-center lg:text-left lg:pl-0 lg:pr-80 text-base lg:text-xl uppercase">At US Mortgage Wholesale, we strive to put our experience, knowledge,
                         and resources as our top priority serving our clients.</p>
-                    <div className="text-center lg:text-left flex flex-col lg:flex-row px-10 lg:p-0">
+                    <div className="text-center lg:text-left flex flex-col sm:flex-row sm:justify-center lg:justify-start px-10 lg:p-0">
                         <Button
                             text="RESIDENTIAL"
                             to="/form/residential"

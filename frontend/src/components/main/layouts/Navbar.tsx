@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     return (
         <div className="font-light">
             <div className="container mx-auto px-4 lg:p-0">
-                <nav className="flex justify-between items-center py-4">
+                <nav className="flex px-0 lg:px-4 xl:px-0 justify-between items-center py-4">
                     <img src={logoImg} alt="Logo US Mortgage" className="w-36 lg:w-60" />
                     <ul className="flex justify-evenly">
                         <li>
@@ -22,7 +22,7 @@ const Navbar: React.FC = () => {
                     </ul>
                 </nav>
             </div>
-            <div className="bg-main py-3">
+            <div className="bg-main py-3 px-0 lg:px-4 xl:px-0">
                 <div className="container mx-auto">
                     <Link to='/' className="text-gray-200 ml-4 lg:m-0 text-base lg:text-xl">APPLY NOW</Link>
                 </div>
