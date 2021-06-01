@@ -32,7 +32,7 @@ WORKDIR /var/www/html/
 
 
 RUN chown -R www-data:www-data /var/www/html \
-    && composer update \
+    && composer update --with-all-dependencies \
     && composer install \
     && php artisan config:cache \
     && php artisan key:generate 
