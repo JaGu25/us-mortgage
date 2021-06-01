@@ -33,7 +33,7 @@ WORKDIR /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html \
     && composer update --with-all-dependencies \
-    && composer install \
+    && composer install --ignore-platform-reqs \
     && php artisan config:cache \
     && php artisan key:generate 
 #CMD service apache2 start
