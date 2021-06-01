@@ -3,22 +3,31 @@ import { useHistory } from 'react-router'
 import Navbar from '../../components/main/layouts/Navbar'
 import Card from '../../components/main/utils/card/Card'
 import { FormContext } from '../../store/form/formContext'
+import axios from "./../../config/axios";
 
 const LastStep: React.FC = () => {
 
-    const { form: { completed } } = useContext(FormContext)
+    const { form } = useContext(FormContext);
     const [loading, setLoading] = useState(true);
     const history = useHistory()
 
     useEffect(() => {
-        if (completed) {
-            setTimeout(() => {
-                setLoading(false)
-            }, 2500);
+        if (form) {
+            sendFormCompleted();
+            setLoading(false);
         } else {
             history.push('/')
         }
     }, [])
+
+    const sendFormCompleted = async () => {
+        console.log(form);
+        try {
+            await axios().post('/apply/form', { ...form });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <>

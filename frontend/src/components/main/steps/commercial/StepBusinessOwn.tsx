@@ -11,11 +11,11 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'business_own', value: 'solo_owner', selected: false },
-        { field: 'business_own', value: 'partnership', selected: false },
-        { field: 'business_own', value: 'limited_liability', selected: false },
-        { field: 'business_own', value: 'corporation', selected: false },
-        { field: 'business_own', value: 'commercial', selected: false }
+        { field: 'business_own', value: 'Solo Proprietor', selected: false },
+        { field: 'business_own', value: 'Partnership', selected: false },
+        { field: 'business_own', value: 'Limited Liability Company (LLC)', selected: false },
+        { field: 'business_own', value: 'C Corporation', selected: false },
+        { field: 'business_own', value: 'S Corporation', selected: false }
     ])
 
     useEffect(() => {

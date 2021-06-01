@@ -8,8 +8,8 @@ const StepResidentialLoans = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'residential_loans', value: 'home_purchase', selected: false },
-        { field: 'residential_loans', value: 'refinance', selected: false },
+        { field: 'residential_loans', value: 'Home Purchase', selected: false },
+        { field: 'residential_loans', value: 'Refinance', selected: false },
     ])
 
     useEffect(() => {

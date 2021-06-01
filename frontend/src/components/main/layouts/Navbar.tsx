@@ -8,8 +8,8 @@ const Navbar: React.FC = () => {
         <div className="font-light">
             <div className="bg-myred py-3 px-0 lg:px-4 xl:px-0">
                 <div className="container mx-auto flex justify-end">
-                    <Link to='/' className="text-gray-200 text-base lg:text-xl mx-3 my-1">APPLY NOW</Link>
-                    <a href="#" className="text-gray-200 text-base lg:text-xl mx-3 my-1">LOG IN</a>
+                    <a href="https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea" target="_blank" className="text-gray-200 text-base lg:text-xl mx-3 my-1">APPLY NOW</a>
+                    {/* <a href="#" className="text-gray-200 text-base lg:text-xl mx-3 my-1">LOG IN</a> */}
                     <a href="tel:720 675 7757" className="text-gray-200  text-base lg:text-xl mx-3 my-1">720 675 7757</a>
                 </div>
             </div>
@@ -20,13 +20,13 @@ const Navbar: React.FC = () => {
                     </Link>
                     <ul className="flex justify-evenly">
                         <li>
-                            <SocialMedia icon="fab fa-facebook-square" href="https://fontawesome.com/v5.15/icons/youtube?style=brands" />
+                            <SocialMedia icon="fab fa-facebook-square" href="https://www.facebook.com/usmortgagewholesale" />
                         </li>
                         <li>
-                            <SocialMedia icon="fab fa-instagram" href="https://fontawesome.com/v5.15/icons/youtube?style=brands" />
+                            <SocialMedia icon="fab fa-instagram" href="https://instagram.com/usmortgagewholesale?utm_medium=copy_link" />
                         </li>
                         <li>
-                            <SocialMedia icon="fab fa-youtube-square" href="https://fontawesome.com/v5.15/icons/youtube?style=brands" />
+                            <SocialMedia icon="fab fa-youtube-square" href="https://www.youtube.com/channel/UCEM7S6tis1WrjZ1VCcML30g" />
                         </li>
                     </ul>
                 </nav>

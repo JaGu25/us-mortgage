@@ -6,44 +6,44 @@ import Radio from '../../utils/forms/Radio'
 const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
 
     const optionsPrimary = [
-        { field: 'plan_to_purchase', value: 'immediatly', text: 'Immediately: Signed a Purchase Agreement', selected: false },
-        { field: 'plan_to_purchase', value: 'asap', text: 'Found a House/Offer Pending', selected: false },
-        { field: 'plan_to_purchase', value: 'within_30', text: 'Within 30 Days', selected: false },
-        { field: 'plan_to_purchase', value: '2_3_month', text: '2 - 3 Months', selected: false },
-        { field: 'plan_to_purchase', value: '3_6_month', text: '3 - 6 Months', selected: false }
+        { field: 'plan_to_purchase', value: 'Immediately: Signed a Purchase Agreement', selected: false },
+        { field: 'plan_to_purchase', value: 'Found a House/Offer Pending', selected: false },
+        { field: 'plan_to_purchase', value: 'Within 30 Days', selected: false },
+        { field: 'plan_to_purchase', value: '2 - 3 Months', selected: false },
+        { field: 'plan_to_purchase', value: '3 - 6 Months', selected: false }
     ]
 
     const optionsSecondary = [
-        { field: 'plan_to_purchase', value: '3_6_month', text: '3 - 6 Months', selected: false },
-        { field: 'plan_to_purchase', value: '6_month', text: '6+ Months', selected: false },
-        { field: 'plan_to_purchase', value: 'no_time_frame', text: 'No Time Frame: I am Researching Options', selected: false },
+        { field: 'plan_to_purchase', value: '3 - 6 Months', selected: false },
+        { field: 'plan_to_purchase', value: '6+ Months', selected: false },
+        { field: 'plan_to_purchase', value: 'No Time Frame: I am Researching Options', selected: false },
     ]
 
     const optionsInvestment = [
-        { field: 'plan_to_purchase', value: 'immediatly', text: 'Immediately: Signed a Purchase Agreement', selected: false },
-        { field: 'plan_to_purchase', value: 'asap', text: 'Found a House/Offer Pending', selected: false },
-        { field: 'plan_to_purchase', value: 'within_30', text: 'Within 30 Days', selected: false },
-        { field: 'plan_to_purchase', value: '2_3_month', text: '2 - 3 Months', selected: false },
-        { field: 'plan_to_purchase', value: '3_6_month', text: '3 - 6 Months', selected: false },
-        { field: 'plan_to_purchase', value: '6_month', text: '6+ Months', selected: false },
-        { field: 'plan_to_purchase', value: 'no_time_frame', text: 'No Time Frame: I am Researching Options', selected: false },
+        { field: 'plan_to_purchase', value: 'Immediately: Signed a Purchase Agreement', selected: false },
+        { field: 'plan_to_purchase', value: 'Found a House/Offer Pending', selected: false },
+        { field: 'plan_to_purchase', value: 'Within 30 Days', selected: false },
+        { field: 'plan_to_purchase', value: '2 - 3 Months', selected: false },
+        { field: 'plan_to_purchase', value: '3 - 6 Months', selected: false },
+        { field: 'plan_to_purchase', value: '6+ Months', selected: false },
+        { field: 'plan_to_purchase', value: 'No Time Frame: I am Researching Options', selected: false },
     ]
 
     const [error, setError] = useState(false)
     const { updateForm, form: { property_use, plan_to_purchase } } = useContext(FormContext)
-    const [options, setOptions] = useState([{ field: 'plan_to_purchase', value: '', text: '', selected: false }]);
+    const [options, setOptions] = useState([{ field: 'plan_to_purchase', value: '', selected: false }]);
 
 
     useEffect(() => {
-        let auxOptions = [{ field: 'plan_to_purchase', value: '', text: '', selected: false }];
+        let auxOptions = [{ field: 'plan_to_purchase', value: '', selected: false }];
         switch (property_use) {
-            case 'primary_residence':
+            case 'Primary Residence':
                 auxOptions = optionsPrimary;
                 break;
-            case 'secondary_home':
+            case 'Secondary Home':
                 auxOptions = optionsSecondary;
                 break;
-            case 'investment_property':
+            case 'Investment Property':
                 auxOptions = optionsInvestment;
                 break
         }
@@ -80,7 +80,7 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
             <Subtitle text="When Do You Plan to Purchase Your Home" />
             {
                 options.map((e, index) => (
-                    <Radio text={e.text} active={options[index].selected} handleClick={() => handleSelectOption(index)} />
+                    <Radio text={e.value} active={options[index].selected} handleClick={() => handleSelectOption(index)} />
                 ))
             }
             { error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}

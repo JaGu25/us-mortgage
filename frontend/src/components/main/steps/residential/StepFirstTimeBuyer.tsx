@@ -9,8 +9,8 @@ const StepFirstTimeBuyer = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'first_time_buyer', value: 'yes', selected: false },
-        { field: 'first_time_buyer', value: 'no', selected: false },
+        { field: 'first_time_buyer', value: 'Yes', selected: false },
+        { field: 'first_time_buyer', value: 'No', selected: false },
     ])
 
     useEffect(() => {

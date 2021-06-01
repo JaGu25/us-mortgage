@@ -9,11 +9,11 @@ const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'credit_profile', value: 'smile_excelent', selected: false },
-        { field: 'credit_profile', value: 'smile_good', selected: false },
-        { field: 'credit_profile', value: 'smile_avg', selected: false },
-        { field: 'credit_profile', value: 'smile_below', selected: false },
-        { field: 'credit_profile', value: 'smile_poor', selected: false }
+        { field: 'credit_profile', value: 'Excellent 720+', selected: false },
+        { field: 'credit_profile', value: 'Good 660-719', selected: false },
+        { field: 'credit_profile', value: 'Avg 620-659', selected: false },
+        { field: 'credit_profile', value: 'Below Avg 580-619', selected: false },
+        { field: 'credit_profile', value: 'Poor >580', selected: false }
     ])
 
     useEffect(() => {

@@ -36,7 +36,6 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
         validateStep: async (): Promise<boolean> => {
             const valid = await trigger();
             const { finance_for } = getValues();
-            console.log(finance_for);
             updateForm({ field: 'finance_for', value: finance_for })
             return valid ? true : false;
         }

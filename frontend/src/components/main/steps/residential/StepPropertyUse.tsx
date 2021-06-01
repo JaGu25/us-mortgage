@@ -9,9 +9,9 @@ const StepPropertyUse = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'property_use', value: 'primary_residence', selected: false },
-        { field: 'property_use', value: 'secondary_home', selected: false },
-        { field: 'property_use', value: 'investment_property', selected: false },
+        { field: 'property_use', value: 'Primary Residence', selected: false },
+        { field: 'property_use', value: 'Secondary Home', selected: false },
+        { field: 'property_use', value: 'Investment Property', selected: false },
     ])
 
     useEffect(() => {

@@ -9,10 +9,10 @@ const StepHomeDescription = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'home_description', value: 'solo_owner', selected: false },
-        { field: 'home_description', value: 'multi_family', selected: false },
-        { field: 'home_description', value: 'condominium', selected: false },
-        { field: 'home_description', value: 'townhouse', selected: false }
+        { field: 'home_description', value: 'Single Family', selected: false },
+        { field: 'home_description', value: 'Multi Family', selected: false },
+        { field: 'home_description', value: 'Condominium', selected: false },
+        { field: 'home_description', value: 'Townhouse', selected: false }
     ])
 
     useEffect(() => {

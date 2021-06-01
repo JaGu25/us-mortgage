@@ -66,7 +66,6 @@ const StepConfirmation = React.forwardRef<unknown>((props, ref: any) => {
         }
     }));
 
-    // abcd1234A
     return (
         <>
             <div className="flex flex-col items-center justify-center my-2 flex-wrap font-mabry mt-0 sm:mt-3 lg:-mt-10 px-0 sm:px-2">
