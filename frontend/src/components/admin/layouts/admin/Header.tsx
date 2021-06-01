@@ -44,7 +44,7 @@ const Header:React.FC<Props> = ({  isOpen, setIsOpen }) => {
                     </svg>
                 </button>
                 <div className="relative mx-4 lg:mx-0">
-                    Administrador
+                    Administrator
                 </div>
             </div>
 
@@ -74,7 +74,7 @@ const Header:React.FC<Props> = ({  isOpen, setIsOpen }) => {
                             <button
                                 onClick={handleLogout}
                                 className="block text-left w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-400 hover:text-white cursor-pointer focus:outline-none"
-                            >Cerrar Sesión</button>
+                            >Log Out</button>
                         </div> : null
                     }
                 </div >

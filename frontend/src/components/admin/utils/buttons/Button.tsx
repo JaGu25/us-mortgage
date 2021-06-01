@@ -3,17 +3,17 @@ import React from 'react'
 type buttonType = 'submit' | 'button'
 
 interface IButtonProps {
-  type?: buttonType
-  text: string
-  isDisabled?: boolean
-  handleClick?: () => void
-  isLoading: boolean
+    type?: buttonType
+    text: string
+    isDisabled?: boolean
+    handleClick?: () => void
+    isLoading: boolean
 }
 
 const Button: React.FC<IButtonProps> = ({
     type = 'button',
     text,
-    handleClick,
+    handleClick = () => (true),
     isDisabled,
     isLoading = 'false'
 }) => {
@@ -22,7 +22,8 @@ const Button: React.FC<IButtonProps> = ({
             type={type}
             className="btn"
             disabled={isDisabled}
-            >
+            onClick={() => handleClick()}
+        >
             {text}
             {
                 isLoading && (<i className="fas fa-spinner fa-spin ml-2"></i>)

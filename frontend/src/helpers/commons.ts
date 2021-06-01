@@ -1,3 +1,4 @@
+import axios from "../config/axios";
 import { IOption } from "./interfaces";
 
 
@@ -18,12 +19,38 @@ export const monthsOptions = [
 
 export const yearOptions = () => {
     const cantYearsBefore = 30;
-    let arrayYears:IOption[] = [];
+    let arrayYears: IOption[] = [];
     let currentYear = new Date().getFullYear();
     for (let index = 0; index < cantYearsBefore; index++) {
-        const year =  currentYear.toString();
-        arrayYears.push({key: year.toString(), value: year.toString() })
+        const year = currentYear.toString();
+        arrayYears.push({ key: year.toString(), value: year.toString() })
         currentYear--;
     }
     return arrayYears
+}
+
+export const RESIDENTIAL = "residential";
+export const COMMERCIAL = "commercial";
+
+
+export const getDataByType = async (type: string) => {
+    let res = await axios().get(`/apply?type=${type}`);
+    return res.data.data
+}
+
+export const downloadInfo = async (type: string, startDate: string, endDate: string) => {
+    const response = await axios()({
+        method: 'GET',
+        url: `apply/download?type=${type}&start_date=${startDate}&end_date=${endDate}`,
+        responseType: 'blob',
+        headers: {
+            'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        }
+    });
+    const url = window.URL.createObjectURL(new Blob([response.data]));
+    const link = document.createElement('a');
+    link.href = url;
+    link.setAttribute('download', `${type}-data.xlsx`); //or any other extension
+    document.body.appendChild(link);
+    link.click();
 }

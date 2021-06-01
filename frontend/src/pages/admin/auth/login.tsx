@@ -17,11 +17,11 @@ interface IFormInputs {
 const schema = yup.object().shape({
     email: yup
         .string()
-        .email('Debe ser un email valido*')
-        .required('El email es requerido*'),
+        .email('The email must be valid*')
+        .required('This field is required*'),
     password: yup
         .string()
-        .required('El password es requerido*')
+        .required('This field is required*'),
 })
 
 const Login: React.FC = () => {
@@ -83,7 +83,7 @@ const Login: React.FC = () => {
                     <div className="mt-6 outline-none">
                         <Button
                             type="submit"
-                            text="Iniciar sesión"
+                            text="Log In"
                             isDisabled={loading}
                             isLoading={loading}
                         />

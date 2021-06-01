@@ -1,12 +1,14 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import Icons from '../../../main/utils/icons/Icons'
+import LogoImg from './../../../../assets/imgs/logo.png'
 
 interface Props {
     isOpen: boolean,
     setIsOpen: (isOpen: boolean) => void
 }
 
-const Sidebar:React.FC<Props> = ({ isOpen, setIsOpen }) => {
+const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
 
     return (
         <div className="flex">
@@ -24,38 +26,41 @@ const Sidebar:React.FC<Props> = ({ isOpen, setIsOpen }) => {
             >
                 <div className="flex items-center justify-center mt-8">
                     <div className="flex items-center">
-                        <img src="" alt="Logo" className="w-40" />
+                        <img src={LogoImg} alt="Logo" className="w-40" />
                     </div>
                 </div>
 
                 <nav className="mt-10">
                     <NavLink
                         activeClassName="active-className"
-                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-600 hover:bg-opacity-25 hover:text-gray-100"
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
                         to={"/admin"}
 
                     >
-                        <svg
-                            className="h-5 w-5"
-                            viewBox="0 0 20 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
-                            <path
-                                d="M7 3C6.44772 3 6 3.44772 6 4C6 4.55228 6.44772 5 7 5H13C13.5523 5 14 4.55228 14 4C14 3.44772 13.5523 3 13 3H7Z"
-                                fill="currentColor"
-                            />
-                            <path
-                                d="M4 7C4 6.44772 4.44772 6 5 6H15C15.5523 6 16 6.44772 16 7C16 7.55228 15.5523 8 15 8H5C4.44772 8 4 7.55228 4 7Z"
-                                fill="currentColor"
-                            />
-                            <path
-                                d="M2 11C2 9.89543 2.89543 9 4 9H16C17.1046 9 18 9.89543 18 11V15C18 16.1046 17.1046 17 16 17H4C2.89543 17 2 16.1046 2 15V11Z"
-                                fill="currentColor"
-                            />
-                        </svg>
+                        <Icons icon="yes" myStyle="fill-current text-gray-500 w-8" />
+                        <span className="mx-4">Home</span>
+                    </NavLink>
+                </nav>
+                <nav className="mt-4">
+                    <NavLink
+                        activeClassName="active-className"
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
+                        to={"/admin/residential"}
 
-                        <span className="mx-4">Dashboard</span>
+                    >
+                        <Icons icon="home" myStyle="fill-current text-gray-500 w-8" />
+                        <span className="mx-4">Residential</span>
+                    </NavLink>
+                </nav>
+                <nav className="mt-4">
+                    <NavLink
+                        activeClassName="active-className"
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
+                        to={"/admin/commercial"}
+
+                    >
+                        <Icons icon="commercial" myStyle="fill-current text-gray-500 w-8" />
+                        <span className="mx-4">Commercial</span>
                     </NavLink>
                 </nav>
             </div>
