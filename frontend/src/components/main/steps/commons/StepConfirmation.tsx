@@ -43,8 +43,8 @@ const StepConfirmation = React.forwardRef<unknown>((props, ref: any) => {
 
     const { updateForm, form: { password, email } } = useContext(FormContext)
 
-    const { register, trigger, formState: { errors }, getValues, setValue } = useForm<IInputs>({
-        mode: 'onBlur',
+    const { register, watch, trigger, formState: { errors }, getValues, setValue } = useForm<IInputs>({
+        mode: 'onChange',
         resolver: yupResolver(schema)
     })
 
@@ -93,6 +93,7 @@ const StepConfirmation = React.forwardRef<unknown>((props, ref: any) => {
                     type="password"
                     name="password"
                     label="Password"
+                    value={watch('password', '')}
                     errorMessage={errors.password?.message}
                     register={register}
                 />

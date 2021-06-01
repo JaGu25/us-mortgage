@@ -11,7 +11,7 @@ interface ITextFieldProps {
     name: string
     errorMessage?: string
     isDisabled?: boolean
-    value?: any
+    value?: string
     register?: any
     handleChange?: () => void
     extraStyle?: string
@@ -26,6 +26,7 @@ const TextField: React.FC<ITextFieldProps> = ({
     errorMessage,
     isDisabled = false,
     register = null,
+    value,
     handleChange,
     extraStyle = '',
     placeHolder
@@ -49,6 +50,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                         placeholder={placeHolder}
                         className={`input ${hasError && ('invalid')} ${extraStyle}`}
                         autoComplete="new-password"
+                        value={value}
                     />
                 )
                     : (
