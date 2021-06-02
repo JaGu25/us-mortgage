@@ -3,25 +3,30 @@
 namespace App\Mail;
 
 use App\Models\Correo;
+use App\Models\FlowForm;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class BabeEnvioCorreo extends Mailable
+class MortgageMail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $correo;
+    public $form;
+    public $subject;
+    public $view;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Correo $correo)
-    {   
-        $this->correo = $correo;
+    public function __construct(FlowForm $form, $subject, $view)
+    {
+        $this->form = $form;
+        $this->subject = $subject;
+        $this->view = $view;
     }
 
     /**
@@ -31,6 +36,6 @@ class BabeEnvioCorreo extends Mailable
      */
     public function build()
     {
-        return $this->view('mails.babe');
+        return $this->subject($this->subject)->view('mails.'.$this->view);
     }
 }

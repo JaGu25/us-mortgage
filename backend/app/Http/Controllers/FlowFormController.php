@@ -7,7 +7,9 @@ use App\Models\FlowForm;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Exports\FormExport;
+use App\Mail\MortgageMail;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class FlowFormController extends Controller
@@ -25,7 +27,7 @@ class FlowFormController extends Controller
 
     public function saveData(Request $request)
     {
-        FlowForm::create([
+        $form = FlowForm::create([
             'type' => $request->get('type'),
             'business_own' => $request->get('business_own'),
             'money_need' => $request->get('money_need'),
@@ -48,12 +50,19 @@ class FlowFormController extends Controller
             'password' => Hash::make($request->get('password'))
         ]);
 
+        $send = [$request->get('email')];
+        $notification = ['max.carrasco.h@gmail.com']; //raulcorreakemish@gmail.com
+
+        // Mail::to($send)->send(new MortgageMail($form,"Thanks for contacting us, ".$request->get('first_name'),"mortgage"));
+        // Mail::to($notification)->send(new MortgageMail($form,"Notification - ".$request->get('first_name'),"notification"));
+
         return response()->json(['message' => 'Data saved'], 200);
     }
 
-
+    
     public function downloadByDate(Request $request)
     {
+       
         $type = $request->query('type');
         $start_date = $request->query('start_date');
         $end_date = $request->query('end_date');
