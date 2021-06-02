@@ -11,7 +11,9 @@ const Dashboard: React.FC = (props: Props) => {
 
     return (
         <div>
-            Hi, {user.user.name} !
+            {
+                user ? (<p>Hi, { user.user.name}!</p>) : null
+            }
         </div>
     )
 }

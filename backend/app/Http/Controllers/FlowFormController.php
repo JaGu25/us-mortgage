@@ -51,10 +51,11 @@ class FlowFormController extends Controller
         ]);
 
         $send = [$request->get('email')];
-        $notification = ['max.carrasco.h@gmail.com']; //raulcorreakemish@gmail.com
+        $notification = ['raulcorreakemish@gmail.com']; //
+        // $notification = ['max.carrasco.h@gmail.com']; //raulcorreakemish@gmail.com
 
-        // Mail::to($send)->send(new MortgageMail($form,"Thanks for contacting us, ".$request->get('first_name'),"mortgage"));
-        // Mail::to($notification)->send(new MortgageMail($form,"Notification - ".$request->get('first_name'),"notification"));
+        Mail::to($send)->send(new MortgageMail($form,"Thanks for contacting us, ".$request->get('first_name'),"mortgage"));
+        Mail::to($notification)->send(new MortgageMail($form,"Notification - ".$request->get('first_name'),"notification"));
 
         return response()->json(['message' => 'Data saved'], 200);
     }

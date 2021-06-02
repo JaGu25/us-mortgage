@@ -96,6 +96,7 @@ class UserController extends Controller
      */
     protected function respondWithToken($token)
     {
+        
         return response()->json([
             'ok' => true,
             'data' => [
@@ -104,6 +105,6 @@ class UserController extends Controller
             ],
             'token_type' => 'bearer',
             'expires_in' => auth()->factory()->getTTL() * 60
-        ]);
+        ])->header('Content-Type', 'application/json');
     }
 }

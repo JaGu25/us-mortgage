@@ -40,7 +40,6 @@ const Login: React.FC = () => {
             setLoading(true);
             setError(false);
             await logIn(email, password);
-            history.push('/admin')
         } catch (err) {
             setError(true);
             console.log(err);
