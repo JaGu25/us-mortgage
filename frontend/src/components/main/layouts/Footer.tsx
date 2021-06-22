@@ -1,14 +1,28 @@
 import React from 'react'
+import SocialMedia from '../utils/buttons/SocialLink'
+import poweredByImg from './../../../assets/imgs/powered_by.png'
 
 const Footer: React.FC = () => {
     return (
-        <a href="https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea" 
-          className="bg-main w-full flex flex-col lg:flex-row items-center justify-center py-5 font-light tracking-widest"
-            target="_blank"
+        <div
+            className="bg-main my-auto w-full flex flex-col md:flex-row justify-center items-center md:justify-between px-12 md:px-40 py-6 md:py-3 font-light tracking-widest"
         >
-            <span className="text-white uppercase mr-0 lg:mr-8 text-xl lg:text-3xl mb-4 lg:mb-0">Buy a Home with confidence !</span>
-            <span className="text-main font-normal uppercase bg-white rounded-bl-md rounded-tr-md text-base lg:text-xl py-2 px-8 tracking-tight">GET MY APROVAL LETTER</span>
-        </a>
+            <ul className="flex justify-evenly text-white items-center">
+                <li>
+                    <SocialMedia icon="fab fa-facebook-square" href="https://www.facebook.com/usmortgagewholesale" />
+                </li>
+                <li>
+                    <SocialMedia icon="fab fa-instagram" href="https://instagram.com/usmortgagewholesale?utm_medium=copy_link" />
+                </li>
+                <li>
+                    <SocialMedia icon="fab fa-youtube-square" href="https://www.youtube.com/channel/UCEM7S6tis1WrjZ1VCcML30g" />
+                </li>
+                <li>
+                    <a href="tel:720 675 7757" className='text-xl ml-6'>720 675 7757</a>
+                </li>
+            </ul>
+            <img src={poweredByImg} alt="Powered By Next Mortgage" className="w-24 py-4 md:p-0" />
+        </div>
 
     )
 }

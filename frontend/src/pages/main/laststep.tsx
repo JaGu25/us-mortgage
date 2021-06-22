@@ -7,14 +7,14 @@ import axios from "./../../config/axios";
 
 const LastStep: React.FC = () => {
 
-    const { form } = useContext(FormContext);
-    const [loading, setLoading] = useState(true);
+    const { form } = useContext(FormContext)
+    const [loading, setLoading] = useState(true)
     const history = useHistory()
 
     useEffect(() => {
         if (form) {
-            sendFormCompleted();
-            setLoading(false);
+            sendFormCompleted()
+            setLoading(false)
         } else {
             history.push('/')
         }

@@ -10,7 +10,7 @@ const SocialMedia: React.FC<ISocialMediaProps> = ({
     icon
 }) => {
     return (
-        <a href={href}>
+        <a href={href} target="_blank">
             <i className={`${icon} text-2xl md:text-3xl lg:text-4xl m-2`}></i>
         </a>
     )

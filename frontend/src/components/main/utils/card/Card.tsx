@@ -8,6 +8,7 @@ interface ICardProps {
     text?: string
     extraChipStyle?: string
     extraCardStyle?: string
+    extraIconStyle?: string
     chip?: boolean
     twoWords?: string[]
     handleClick?: () => void
@@ -19,6 +20,7 @@ const Card: React.FC<ICardProps> = ({
     active = false,
     extraChipStyle = '',
     extraCardStyle = '',
+    extraIconStyle = '',
     chip = true,
     twoWords = null,
     handleClick
@@ -45,7 +47,7 @@ const Card: React.FC<ICardProps> = ({
         >
             <Icons
                 icon={icon}
-                myStyle="fill-current w-28 text-main active"
+                myStyle={`fill-current w-28 text-main active ${extraIconStyle}`}
             />
             {
                 chip && (

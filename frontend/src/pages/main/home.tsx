@@ -1,59 +1,83 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router'
 import Footer from '../../components/main/layouts/Footer'
 import Navbar from '../../components/main/layouts/Navbar'
-import Button from '../../components/main/utils/buttons/Button'
-import mainImg from './../../assets/imgs/main.png'
+import Card from '../../components/main/utils/card/Card'
+import bgImg0 from './../../assets/imgs/bg-0.png'
+import bgImg1 from './../../assets/imgs/bg-1.png'
+import bgImg2 from './../../assets/imgs/bg-2.png'
+import familyImg from './../../assets/imgs/family.png'
 
 const Home: React.FC = () => {
 
+    const bg: string[] = [bgImg0, bgImg1, bgImg2];
+    let [indexBg, setIndexBg] = useState(0);
+    const history = useHistory()
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            indexBg++;
+            setIndexBg(indexBg);
+            if (indexBg > 2) {
+                setIndexBg(0);
+            }
+        }, 5000);
+        return () => clearInterval(interval);
+    }, [indexBg]);
+
+    const handleInitFlow = (flow: string) => {
+        history.push(`/form/${flow}`)
+    }
+
     return (
-        <div className="relative">
-            <Navbar />
-            <section className="container mx-auto flex flex-col-reverse lg:flex-row py-14 relative mt-0 lg:px-8 xl:mt-4">
-                <div className="w-full lg:w-1/2">
-                    <h1 className="text-main  text-3xl lg:text-5xl xl:text-7xl font-light tracking-widest text-center lg:text-left">
-                        <span className="block">
-                            <span className="font-semibold mr-4">
-                                GET
+        <div>
+            <div className="relative bg-cover bg-no-repeat bg-bottom min-height transition-all duration-300 ease-in-out" style={{ backgroundImage: `url('${bg[indexBg]}')` }}>
+                <Navbar />
+                <section className="container mx-auto flex flex-col lg:flex-row relative mt-0 lg:px-20 xl:mt-4">
+                    <div className="w-full lg:w-1/2">
+                        <h1 className="text-main  text-3xl lg:text-5xl xl:text-7xl font-light tracking-wider text-center lg:text-left">
+                            <span className="block">
+                                <span className="font-semibold mr-4">
+                                    GET
                             </span>
                             YOUR
                             <span className="font-semibold ml-4">
-                                LOANS,
+                                    LOANS,
                             </span>
-                        </span>
-                        <span className="block mt-4">
-                            <span className="font-semibold mr-4">
-                                ACHIEVE
+                            </span>
+                            <span className="block mt-4">
+                                <span className="font-semibold mr-4">
+                                    ACHIEVE
                             </span>
                             YOUR
                         </span>
-                        <span className="font-semibold block mt-4">
-                            DREAMS
+                            <span className="font-semibold block mt-4">
+                                DREAMS
                         </span>
-                    </h1>
-                    <p className="text-seconday font-light py-12 px-8 text-center lg:text-left lg:pl-0 lg:pr-20 xl:pr-80 text-base lg:text-xl uppercase">At US Mortgage Wholesale, we strive to put our experience, knowledge,
+                        </h1>
+                        <p className="text-white font-light py-4 px-8 text-center lg:text-left lg:pl-0 lg:pr-16 xl:pr-72 text-base lg:text-xl uppercase text-shadow">At US Mortgage Wholesale, we strive to put our experience, knowledge,
                         and resources as our top priority serving our clients.</p>
-                    <div className="text-center lg:text-left flex flex-col sm:flex-row sm:justify-center lg:justify-start px-10 lg:p-0">
-                        <Button
-                            text="RESIDENTIAL"
-                            to="/form/residential"
-                            icon="home"
-                        />
-                        <Button
-                            text="COMMERCIAL"
-                            to="/form/commercial"
-                            icon="commercial"
-                        />
                     </div>
-                </div>
-                <div className="w-full lg:w-1/2 px-4 pb-8 lg:p-0">
-                    <div className="border-4 border-shadow rounded-bl-4xl relative z-40 bg-white w-full">
-                        <img src={mainImg} alt="Main Page" className="m-4 pr-8 w-full"/>
+                    <div className="w-full lg:w-1/2 h-full flex flex-col lg:flex-row justify-end my-8 lg:my-0">
+                        <div className="text-center">
+                            <h2 className="text-myred uppercase text-base">GET YOUR FREE QUOTE</h2>
+                            <div className="flex justify-center">
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-28 p-4" extraChipStyle="text-xs text-center" extraIconStyle="w-20" handleClick={() => handleInitFlow('commercial')}/>
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-28 p-4" extraChipStyle="text-xs text-center" extraIconStyle="w-20" handleClick={() => handleInitFlow('commercial')}/>
+                            </div>
+                        </div>
+                        <div className="text-center">
+                            <h2 className="text-myred uppercase text-base">GET YOUR LOAN</h2>
+                            <div className="flex justify-center">
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-28 p-4" extraChipStyle="text-xs text-center" extraIconStyle="w-20" handleClick={() => handleInitFlow('commercial')}/>
+                                <Card icon="commercial" text="Residential" active={false} extraCardStyle="w-28 p-4" extraChipStyle="text-xs text-center" extraIconStyle="w-20" handleClick={() => handleInitFlow('commercial')}/>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
-            <Footer/>
-            <div className="absolute top-72 right-0 h-16 w-1/2 bg-shadow z-10 rounded-sm hidden lg:block"></div>
+                </section>
+                <img src={familyImg} alt="Family" className="hidden lg:block absolute w-1/4 bottom-0 left-1/2" />
+            </div>
+            <Footer />
         </div>
     )
 }

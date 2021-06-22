@@ -17,14 +17,11 @@ module.exports = {
         seconday: {
           DEFAULT: "#ababab"
         },
-        shadow: {
-          DEFAULT: "#70768d"
-        },
         hover: {
           DEFAULT: "#313D6D"
         },
         myred: {
-          DEFAULT: "#c00000"
+          DEFAULT: "#8d1727"
         }
       },
       borderRadius: {
