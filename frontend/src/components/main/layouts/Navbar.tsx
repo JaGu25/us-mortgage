@@ -5,7 +5,7 @@ import logoImg from './../../../assets/imgs/logo.png'
 const Navbar: React.FC = () => {
     return (
         <div className="font-light">
-            <div className="mx-auto py-8">
+            <div className="mx-auto pt-8">
                 <nav className="flex flex-col items-center md:flex-row justify-between py-4">
                     <div className="flex justify-center items-center w-full md:w-1/5">
                         <div className="h-12 lg:w-20 xl:w-full bg-gradient rounded-sm"></div>

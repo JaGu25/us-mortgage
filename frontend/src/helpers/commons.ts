@@ -17,8 +17,8 @@ export const monthsOptions = [
     { key: '11', value: "December" },
 ]
 
-export const yearOptions = () => {
-    const cantYearsBefore = 30;
+export const yearOptions = (lenth = 30) => {
+    const cantYearsBefore = lenth;
     let arrayYears: IOption[] = [];
     let currentYear = new Date().getFullYear();
     for (let index = 0; index < cantYearsBefore; index++) {

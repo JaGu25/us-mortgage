@@ -13,6 +13,7 @@ interface IInputs {
 const schema = yup.object().shape({
     business_code: yup
         .string()
+        .max(5,'Only 5 characters allowed')
         .required('This field is required*'),
 })
 
@@ -22,7 +23,7 @@ const StepBusinessCode =  React.forwardRef<unknown>((props, ref: any) => {
     const { updateForm, form: { business_code } } = useContext(FormContext)
 
     const { register, trigger, formState: { errors }, getValues, setValue } = useForm<IInputs>({
-        mode: 'onBlur',
+        mode: 'onChange',
         resolver: yupResolver(schema)
     })
 
@@ -43,8 +44,7 @@ const StepBusinessCode =  React.forwardRef<unknown>((props, ref: any) => {
     
     return (
         <>
-            <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="Business ZIP Code"/>
+            <Subtitle text="<span class='text-2xl md:text-2xxl'>ZIP</span> Code"/>
             <TextField
                 id="business_code"
                 type="number"

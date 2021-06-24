@@ -18,22 +18,20 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
         { field: 'business_own', value: 'S Corporation', selected: false }
     ])
 
-    useEffect(() => {
-        if(business_own != ''){
-            setCardsActives(cardActives.map((e) => e.value === business_own ? { ...e, selected: true } : e))
-        }
-    }, [])
-
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            setError(false)
-            const selected = cardActives.find(e => e.selected === true)
-            if (selected) {
-                updateForm(selected)
-                return true
+        validateStep: (valid = true): boolean => {
+            if (valid) {
+                setError(false)
+                const selected = cardActives.find(e => e.selected === true)
+                if (selected) {
+                    updateForm(selected)
+                    return true
+                } else {
+                    setError(true)
+                    return false
+                }
             } else {
-                setError(true)
-                return false
+                return true;
             }
         }
     }));
@@ -42,12 +40,18 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
         setError(false);
         let auxCardActives = cardActives;
         auxCardActives = (auxCardActives.map((e) => ({ ...e, selected: false })));
-        setCardsActives(auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e))
+        auxCardActives = auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e);
+        setCardsActives(auxCardActives)
+        const option = auxCardActives.find((e: any) => e.selected === true);
+        updateForm(option);
+        {/*// @ts-ignore */ }
+        props.changeCurrentStep(1);
     }
 
     return (
         <>
-            <Subtitle text="What type of business do you own?" />
+            <h2 className="font-gobold text-main text-xl lg:text-4xl -mt-4 mb-2 uppercase font-light"><span className="font-bold">BUSINESS</span> LOANS</h2>
+            <Subtitle text="What type of <span class='text-2xl md:text-2xxl'>business</span> do you own?" />
             <div className="card-container">
                 <Card icon="solo_owner" text="Solo Proprietor" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
                 <Card icon="partnership" text="Partnership" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />

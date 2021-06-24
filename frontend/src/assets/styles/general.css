@@ -29,6 +29,9 @@
         }
       }
 }
+.min-width-5 {
+  min-width: 5rem !important;
+}
 
 .min-height {
     min-height: calc(100vh - 80px);

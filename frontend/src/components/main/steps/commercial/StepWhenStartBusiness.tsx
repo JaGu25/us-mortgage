@@ -50,8 +50,7 @@ const StepWhenStartBusiness = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="When did you start your business?" />
+            <Subtitle text="When did you <span class='text-2xl md:text-2xxl'>start</span> your <span class='text-2xl md:text-2xxl'>business</span>?" />
             <div className="flex flex-col lg:flex-row justify-center w-3/4 lg:w-1/3 xl:w-1/4">
                 <div className="w-full lg:w-1/2 mx-2">
                     <Select
@@ -65,7 +64,7 @@ const StepWhenStartBusiness = React.forwardRef<unknown>((props, ref: any) => {
                 </div>
                 <div className="w-full lg:w-1/2 mx-2">
                     <Select
-                        options={yearOptions()}
+                        options={yearOptions(32)}
                         firstValue="Year"
                         extraStyle="w-full lg:w-full xl:w-full"
                         register={register}

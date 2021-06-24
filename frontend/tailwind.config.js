@@ -5,6 +5,10 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      fontSize: {
+        'xss' : "10px",
+        '2xxl' : "1.675rem"
+      },
       fontFamily: {
         gobold: ['Gobold'],
         mabry: ['Mabry'],

@@ -16,22 +16,20 @@ const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
         { field: 'credit_profile', value: 'Poor >580', selected: false }
     ])
 
-    useEffect(() => {
-        if(credit_profile != ''){
-            setCardsActives(cardActives.map((e) => e.value === credit_profile ? { ...e, selected: true } : e))
-        }
-    }, [])
-
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            setError(false)
-            const selected = cardActives.find(e => e.selected === true)
-            if (selected) {
-                updateForm(selected)
-                return true
+        validateStep: (valid = true): boolean => {
+            if (valid) {
+                setError(false)
+                const selected = cardActives.find(e => e.selected === true)
+                if (selected) {
+                    updateForm(selected)
+                    return true
+                } else {
+                    setError(true)
+                    return false
+                }
             } else {
-                setError(true)
-                return false
+                return true;
             }
         }
     }));
@@ -40,18 +38,23 @@ const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
         setError(false);
         let auxCardActives = cardActives;
         auxCardActives = (auxCardActives.map((e) => ({ ...e, selected: false })));
-        setCardsActives(auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e))
+        auxCardActives = auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e);
+        setCardsActives(auxCardActives)
+        const option = auxCardActives.find((e: any) => e.selected === true);
+        updateForm(option);
+        {/*// @ts-ignore */ }
+        props.changeCurrentStep(1);
     }
 
     return (
         <div>
-            <Subtitle text="Your Credit Profile" />
+            <Subtitle text="Your <span class='text-2xl md:text-2xxl'>Credit</span> Profile" />
             <div className="card-container">
-                <Card icon="smile_excelent" text="" twoWords={['Excellent', '720+']} extraChipStyle="card-chip-add" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
+                <Card icon="smile_excelent" text="" twoWords={['Excellent', '720-More']} extraChipStyle="card-chip-add" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
                 <Card icon="smile_good" text="" twoWords={['Good', '660-719']} extraChipStyle="card-chip-add" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
                 <Card icon="smile_avg" text="" twoWords={['Avg.', '620-659']} extraChipStyle="card-chip-add" active={cardActives[2].selected} handleClick={() => handleSelectCard(2)} />
                 <Card icon="smile_below" text="" twoWords={['Below Avg', '580-619']} extraChipStyle="card-chip-add" active={cardActives[3].selected} handleClick={() => handleSelectCard(3)} />
-                <Card icon="smile_poor" text="" twoWords={['Poor', '>580']} extraChipStyle="card-chip-add" active={cardActives[4].selected} handleClick={() => handleSelectCard(4)} />
+                <Card icon="smile_poor" text="" twoWords={['Poor', '579-Less']} extraChipStyle="card-chip-add" active={cardActives[4].selected} handleClick={() => handleSelectCard(4)} />
             </div>
             { error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}
         </div>

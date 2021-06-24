@@ -1,5 +1,6 @@
 import React from 'react'
 import SocialMedia from '../utils/buttons/SocialLink'
+import Icons from '../utils/icons/Icons'
 import poweredByImg from './../../../assets/imgs/powered_by.png'
 
 const Footer: React.FC = () => {
@@ -15,7 +16,9 @@ const Footer: React.FC = () => {
                     <SocialMedia icon="fab fa-instagram" href="https://instagram.com/usmortgagewholesale?utm_medium=copy_link" />
                 </li>
                 <li>
-                    <SocialMedia icon="fab fa-youtube-square" href="https://www.youtube.com/channel/UCEM7S6tis1WrjZ1VCcML30g" />
+                    <a href="https://www.youtube.com/channel/UCEM7S6tis1WrjZ1VCcML30g" target="_blank">
+                        <Icons icon="youtube" myStyle="fill-current text-white w-12" />
+                    </a>
                 </li>
                 <li>
                     <a href="tel:720 675 7757" className='text-xl ml-6'>720 675 7757</a>

@@ -42,14 +42,14 @@ const StepMoneyNeed = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="How much money do you need?" />
+            <Subtitle text="How much <span class='text-2xl md:text-2xxl'>money</span> do <span class='text-2xl md:text-2xxl'>you need?</span>" />
             <TextField
                 id="money_need"
                 type="number"
                 name="money_need"
                 errorMessage={errors.money_need?.message}
                 register={register}
+                icon="fa-dollar-sign"
             />
         </>
     )

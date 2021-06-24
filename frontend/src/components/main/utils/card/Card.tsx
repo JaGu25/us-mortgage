@@ -47,7 +47,7 @@ const Card: React.FC<ICardProps> = ({
         >
             <Icons
                 icon={icon}
-                myStyle={`fill-current w-28 text-main active ${extraIconStyle}`}
+                myStyle={`fill-current text-main active ${extraIconStyle}`}
             />
             {
                 chip && (

@@ -43,12 +43,12 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
 
     const options: IOption[] = [
         { key: 'expansion', value: 'Expansion' },
-        { key: 'equipment_purchase', value: 'Equipatment purchase' },
+        { key: 'equipment_purchase', value: 'Equipment Purchase' },
         { key: 'inventory', value: 'Inventory' },
         { key: 'payroll', value: 'Payroll' },
         { key: 'marketing', value: 'Marketing' },
-        { key: 'commercial_real_state', value: 'Commercial real state' },
-        { key: 'remotel_my_location', value: 'Remodel my location' },
+        { key: 'commercial_real_state', value: 'Commercial Real State' },
+        { key: 'remotel_my_location', value: 'Remodel my Location' },
         { key: 'refinance_debt', value: 'Refinance Debt' },
         { key: 'finance_accounts_recivable', value: 'Finance Accounts Receivable' },
         { key: 'buy_business_franchise', value: 'Buy a business/Franchise' },
@@ -57,10 +57,9 @@ const StepFinanceFor = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="What are you getting financing for?" />
+            <Subtitle text="What are you getting <span class='text-2xl md:text-2xxl'>financing</span> for?" />
             <Select 
-            firstValue="Select one" 
+            firstValue="Select One" 
             options={options} 
             extraStyle="lg:w-2/12 xl:w-1/5 w-3/4"
             register={register} 

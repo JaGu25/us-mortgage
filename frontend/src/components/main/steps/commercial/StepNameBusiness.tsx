@@ -42,8 +42,7 @@ const StepNameBusiness =  React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="title-3">Business Loans</h2>
-            <Subtitle text="What's the name of your business"/>
+            <Subtitle text="What's the <span class='text-2xl md:text-2xxl'>name</span> of your <span class='text-2xl md:text-2xxl'>business</span>?"/>
             <TextField
                 id="business_name"
                 type="text"
