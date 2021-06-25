@@ -50,7 +50,7 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="font-gobold text-main text-xl lg:text-4xl -mt-4 mb-2 uppercase font-light"><span className="font-bold">BUSINESS</span> LOANS</h2>
+            <h2 className="font-gobold text-main text-2xl lg:text-4xl mb-2 lg:mt-4 uppercase font-light"><span className="font-bold">BUSINESS</span> LOANS</h2>
             <Subtitle text="What type of <span class='text-2xl md:text-2xxl'>business</span> do you own?" />
             <div className="card-container">
                 <Card icon="solo_owner" text="Solo Proprietor" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />

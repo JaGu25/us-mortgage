@@ -76,7 +76,7 @@ const Home: React.FC = () => {
                             <h2 className="text-myred uppercase text-base -mb-2">GET YOUR FREE QUOTE</h2>
                             <div className="flex justify-center">
                                 <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-16 lg:w-20" handleClick={() => handleInitFlow('commercial')} />
-                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('commercial')} />
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('free_quote_business')} />
                             </div>
                         </div>
                         <div className="text-center w-1/2">

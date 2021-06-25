@@ -4,10 +4,10 @@ import Navbar from '../../components/main/layouts/Navbar'
 import Button from '../../components/main/utils/buttons/Button'
 import ProgressBar from '../../components/main/utils/progressbar/ProgressBar'
 import { ISteps } from '../../helpers/interfaces'
-import { CommercialSteps, ResidentialSteps, LOAN_BUSINESS } from '../../helpers/type_steps'
+import { LOAN_BUSINESS, FREE_QUOTE_BUSINESS, FREE_QUOTE_RESIDENTIAL } from '../../helpers/type_steps'
 import { FormContext } from '../../store/form/formContext'
 
-type TypeSteps = 'residential' | 'commercial' | 'loan_business'
+type TypeSteps = 'free_quote_residential' | 'loan_business' | 'free_quote_business'
 
 interface TypeForm {
     type: TypeSteps
@@ -32,14 +32,14 @@ const Form: React.FC = () => {
         resetForm();
         updateForm({ field: 'type', value: type })
         switch (type) {
-            case 'commercial':
-                setStepper(CommercialSteps)
-                setCurrentStep({ step: 0, stepObject: CommercialSteps[0] })
+            case 'free_quote_residential':
+                setStepper(FREE_QUOTE_RESIDENTIAL)
+                setCurrentStep({ step: 0, stepObject: FREE_QUOTE_RESIDENTIAL[0] })
                 break;
-            case 'residential':
-                setStepper(ResidentialSteps)
-                setCurrentStep({ step: 0, stepObject: ResidentialSteps[0] })
-                break;
+            case 'free_quote_business':
+                setStepper(FREE_QUOTE_BUSINESS)
+                setCurrentStep({ step: 0, stepObject: FREE_QUOTE_BUSINESS[0] })
+                break
             case 'loan_business':
                 setStepper(LOAN_BUSINESS)
                 setCurrentStep({ step: 0, stepObject: LOAN_BUSINESS[0] })

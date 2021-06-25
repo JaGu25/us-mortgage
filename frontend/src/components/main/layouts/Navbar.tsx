@@ -14,10 +14,10 @@ const Navbar: React.FC = () => {
         <div className="font-light">
             <div className="mx-auto pt-8">
                 <nav className="flex items-center sm:flex-row justify-between pt-4 pb-1">
-                    <div className="flex justify-center items-center lg:items-start w-2/3 sm:w-1/2 lg:w-1/5 ml-0 sm:-ml-7 lg:ml-0">
+                    <div className="flex justify-center items-center lg:items-start w-2/3 sm:w-1/2 lg:w-1/3 xl:w-1/5 ml-0 sm:-ml-7 lg:ml-0">
                         <div className="h-12 w-1/4 flex-1 lg:w-20 xl:w-full bg-gradient rounded-sm"></div>
                         <Link to='/'>
-                            <img src={logoImg} alt="Logo US Mortgage" className="w-48 sm:48 mx-4 inline-block -mt-3 sm:mr-2 sm:-mt-6 lg:-mt-3" />
+                            <img src={logoImg} alt="Logo US Mortgage" className="w-48 sm:48 mx-4 inline-block -mt-3 sm:mr-2 sm:-mt-6 lg:-mt-3 xl:-mr-5" />
                         </Link>
                     </div>
                     <div className="bg-main w-1/3 sm:w-2/3 h-12 relative block lg:hidden">
