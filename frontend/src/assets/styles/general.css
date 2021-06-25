@@ -1,38 +1,60 @@
-
 .title-3 {
-    @apply text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-10 lg:mb-20;
+  @apply text-main lg:text-3xl font-mabry uppercase font-normal px-4 mb-10 lg:mb-20;
 }
 
 .bg-gradient {
-    background: -moz-linear-gradient(left,  rgba(44,83,158,0.57) 0%, rgba(44,83,158,0.57) 100%);
-    background: -webkit-linear-gradient(left,  rgba(44,83,158,0.57) 0%,rgba(44,83,158,0.57) 100%);
-    background: linear-gradient(to right,  rgba(44,83,158,0.57) 0%,rgba(44,83,158,0.57) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#912c539e', endColorstr='#912c539e',GradientType=1 );
+  background: -moz-linear-gradient(left, rgba(44, 83, 158, 0.57) 0%, rgba(44, 83, 158, 0.57) 100%);
+  background: -webkit-linear-gradient(left, rgba(44, 83, 158, 0.57) 0%, rgba(44, 83, 158, 0.57) 100%);
+  background: linear-gradient(to right, rgba(44, 83, 158, 0.57) 0%, rgba(44, 83, 158, 0.57) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#912c539e', endColorstr='#912c539e',GradientType=1 );
 }
 
-@layer components{
-    @responsive {
-        .text-shadow {
-          text-shadow: 0 2px 4px rgba(0,0,0,0.10);
-        }
-      
-        .text-shadow-md {
-          text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
-        }
-      
-        .text-shadow-lg {
-          text-shadow: 0 15px 30px rgba(0,0,0,0.11), 0 5px 15px rgba(0,0,0,0.08);
-        }
-      
-        .text-shadow-none {
-          text-shadow: none;
-        }
-      }
+@layer components {
+  @responsive {
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-shadow-md {
+      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.08);
+    }
+
+    .text-shadow-lg {
+      text-shadow: 0 15px 30px rgba(0, 0, 0, 0.11), 0 5px 15px rgba(0, 0, 0, 0.08);
+    }
+
+    .text-shadow-none {
+      text-shadow: none;
+    }
+  }
 }
-.min-width-5 {
+.min-width-chip {
   min-width: 5rem !important;
 }
 
 .min-height {
-    min-height: calc(100vh - 80px);
+  min-height:  960px;
+}
+
+@media only screen and (max-width: 820px) {
+  .min-height {
+    min-height: 900px;
+  }
+  .min-width-chip {
+    min-width: 4rem !important;
+  }
+  
+}
+
+.menu {
+  overflow: hidden; /* Hide the element content, while height = 0 */
+  height: 0;
+  opacity: 0;
+  transition: height 0ms 400ms, opacity 400ms 0ms;
+}
+
+.menu-active {
+  height: auto;
+  opacity: 1;
+  transition: height 0ms 0ms, opacity 600ms 0ms;
 }

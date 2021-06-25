@@ -17,6 +17,7 @@ const schema = yup.object().shape({
         .required('This field is required*'),
     email: yup
         .string()
+        .email('The email must be valid*')
         .required('This field is required*'),
     phone_number: yup
         .string()
