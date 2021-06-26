@@ -5,6 +5,12 @@ module.exports = {
   darkMode: false,
   theme: {
     extend: {
+      zIndex: {
+        '-10': '-10',
+      },
+      width: {
+        '104' : "28rem"
+      },
       fontSize: {
         'xss' : "10px",
         '2xxl' : "1.675rem"

@@ -2,7 +2,7 @@ export type iconType = 'commercial' | 'home' | 'refinance' | 'email' |
     'smile_good' | 'solo_owner' | 'partnership' | 'limited_liability' |
     'corporation' | 'smile_poor' | 'smile_below' | 'smile_avg' | 'smile_excelent' |
     'multi_family' | 'condominium' | 'townhouse' | 'primary_residence' |
-    'secondary_home' | 'invesment_property' | 'yes' | 'no' | 'youtube'
+    'secondary_home' | 'invesment_property' | 'yes' | 'no' | 'youtube' | 'cash_out'
 
 export interface IOption {
     key: string
@@ -23,4 +23,5 @@ export interface ISteps {
     showProgressBar: boolean
     showNextButton: boolean
     isCompleted: boolean
+    customFooter: boolean
 }

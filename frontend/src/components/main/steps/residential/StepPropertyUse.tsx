@@ -14,22 +14,20 @@ const StepPropertyUse = React.forwardRef<unknown>((props, ref: any) => {
         { field: 'property_use', value: 'Investment Property', selected: false },
     ])
 
-    useEffect(() => {
-        if(property_use != ''){
-            setCardsActives(cardActives.map((e) => e.value === property_use ? { ...e, selected: true } : e))
-        }
-    }, [])
-
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            setError(false)
-            const selected = cardActives.find(e => e.selected === true)
-            if (selected) {
-                updateForm(selected)
-                return true
+        validateStep: (valid = true): boolean => {
+            if (valid) {
+                setError(false)
+                const selected = cardActives.find(e => e.selected === true)
+                if (selected) {
+                    updateForm(selected)
+                    return true
+                } else {
+                    setError(true)
+                    return false
+                }
             } else {
-                setError(true)
-                return false
+                return true;
             }
         }
     }));
@@ -38,18 +36,23 @@ const StepPropertyUse = React.forwardRef<unknown>((props, ref: any) => {
         setError(false);
         let auxCardActives = cardActives;
         auxCardActives = (auxCardActives.map((e) => ({ ...e, selected: false })));
-        setCardsActives(auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e))
+        auxCardActives = auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e);
+        setCardsActives(auxCardActives)
+        const option = auxCardActives.find((e: any) => e.selected === true);
+        updateForm(option);
+        {/*// @ts-ignore */ }
+        props.changeCurrentStep(1);
     }
 
     return (
         <>
-            <Subtitle text="Property Use" />
+            <Subtitle text="<span class='text-2xl md:text-2xxl'>property</span> use" />
             <div className="card-container">
-                <Card icon="primary_residence" text="" twoWords={['Primary', 'Residence']} extraChipStyle="card-chip-add"  active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
+                <Card icon="primary_residence" text="" twoWords={['Primary', 'Residence']} extraChipStyle="card-chip-add" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
                 <Card icon="secondary_home" text="" twoWords={['Secondary', 'Home']} extraChipStyle="card-chip-add" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
                 <Card icon="invesment_property" text="" twoWords={['Investment', 'Property']} extraChipStyle="card-chip-add" active={cardActives[2].selected} handleClick={() => handleSelectCard(2)} />
             </div>
-            { error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}
+            {error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}
         </>
     )
 })

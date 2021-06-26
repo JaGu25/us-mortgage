@@ -33,7 +33,6 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
     const { updateForm, form: { property_use, plan_to_purchase } } = useContext(FormContext)
     const [options, setOptions] = useState([{ field: 'plan_to_purchase', value: '', selected: false }]);
 
-
     useEffect(() => {
         let auxOptions = [{ field: 'plan_to_purchase', value: '', selected: false }];
         switch (property_use) {
@@ -55,29 +54,38 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
     }, [])
 
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            setError(false)
-            const selected = options.find(e => e.selected === true)
-            if (selected) {
-                updateForm(selected)
-                return true
+        validateStep: (valid = true): boolean => {
+            if (valid) {
+                setError(false)
+                const selected = options.find(e => e.selected === true)
+                if (selected) {
+                    updateForm(selected)
+                    return true
+                } else {
+                    setError(true)
+                    return false
+                }
             } else {
-                setError(true)
-                return false
+                return true;
             }
         }
     }));
 
     const handleSelectOption = (selected: number) => {
         setError(false);
-        let auxOptions = options;
-        auxOptions = (auxOptions.map((e) => ({ ...e, selected: false })));
-        setOptions(auxOptions.map((e, index) => index === selected ? { ...e, selected: true } : e))
+        let auxOptions = options
+        auxOptions = (auxOptions.map((e) => ({ ...e, selected: false })))
+        auxOptions = auxOptions.map((e, index) => index === selected ? { ...e, selected: true } : e)
+        setOptions(auxOptions)
+        const option = auxOptions.find((e: any) => e.selected === true)
+        updateForm(option)
+        {/*// @ts-ignore */ }
+        props.changeCurrentStep(1);
     }
 
     return (
         <>
-            <Subtitle text="When Do You Plan to Purchase Your Home" />
+            <Subtitle text="<span class='text-2xl md:text-2xxl'>when</span> Do You <span class='text-2xl md:text-2xxl'>Plan</span> to <span class='text-2xl md:text-2xxl'>Purchase Your Home</span>" />
             {
                 options.map((e, index) => (
                     <Radio text={e.value} active={options[index].selected} handleClick={() => handleSelectOption(index)} />

@@ -9,51 +9,46 @@ import StepCreditProfile from "../components/main/steps/commons/StepCreditProfil
 import StepNameBusiness from "../components/main/steps/commercial/StepNameBusiness"
 import StepBusinessCode from "../components/main/steps/commercial/StepBusinessCode"
 import StepProfileInfo from "../components/main/steps/commons/StepProfileInfo"
-import StepEmailAddress from "../components/main/steps/commons/StepEmailAddress"
 import StepBestWayReachYou from "../components/main/steps/commercial/StepBestWayReachYou"
 import StepConfirmation from "../components/main/steps/commons/StepConfirmation"
-import StepHomeDescription from "../components/main/steps/residential/StepHomeDescription"
-import StepPropertyUse from "../components/main/steps/residential/StepPropertyUse"
-import StepFirstTimeBuyer from "../components/main/steps/residential/StepFirstTimeBuyer"
-import StepPlanPurchase from "../components/main/steps/residential/StepPlanPurchase"
+import StepHomeDescription from '../components/main/steps/residential/StepHomeDescription'
+import StepPropertyUse from '../components/main/steps/residential/StepPropertyUse'
+import StepFirstTimeBuyer from '../components/main/steps/residential/StepFirstTimeBuyer'
+import StepPlanPurchase from '../components/main/steps/residential/StepPlanPurchase'
+import StepEmailSended from '../components/main/steps/commons/StepEmailSended'
 
 export const FREE_QUOTE_RESIDENTIAL: ISteps[] = [
-    { component: StepBusinessOwn, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepMoneyNeed, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepFinanceFor, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepWhenStartBusiness, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepAnnualRevenue, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepNameBusiness, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepBusinessCode, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepProfileInfo, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepEmailAddress, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepBestWayReachYou, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepConfirmation, showProgressBar: true, showNextButton: false, isCompleted: false },
+    { component: StepResidentialLoans, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepHomeDescription, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepPropertyUse, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepFirstTimeBuyer, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepPlanPurchase, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepEmailSended, showProgressBar: false, showNextButton: false, isCompleted: false, customFooter: true },
 ]
-
 
 export const FREE_QUOTE_BUSINESS: ISteps[] = [
-    { component: StepBusinessOwn, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepMoneyNeed, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepFinanceFor, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepWhenStartBusiness, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepAnnualRevenue, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepNameBusiness, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false },
+    { component: StepBusinessOwn, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepMoneyNeed, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepFinanceFor, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepWhenStartBusiness, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepAnnualRevenue, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepNameBusiness, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
 ]
 
-
 export const LOAN_BUSINESS: ISteps[] = [
-    { component: StepBusinessOwn, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepMoneyNeed, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepFinanceFor, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepWhenStartBusiness, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepAnnualRevenue, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false },
-    { component: StepNameBusiness, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false },
-    { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false },
+    { component: StepBusinessOwn, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepMoneyNeed, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepFinanceFor, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepWhenStartBusiness, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepAnnualRevenue, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepNameBusiness, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
 ]

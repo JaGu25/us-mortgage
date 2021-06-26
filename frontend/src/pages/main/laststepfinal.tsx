@@ -5,8 +5,9 @@ import Card from '../../components/main/utils/card/Card'
 import { FormContext } from '../../store/form/formContext'
 import axios from "./../../config/axios"
 import FooterForm from '../../components/main/layouts/FooterForm'
+import Button from '../../components/main/utils/buttons/Button'
 
-const LastStep: React.FC = () => {
+const LastStepFinal: React.FC = () => {
 
     const { form } = useContext(FormContext)
     const [loading, setLoading] = useState(true)
@@ -36,7 +37,7 @@ const LastStep: React.FC = () => {
     return (
         <>
             <Navbar />
-            <section className="container mx-auto text-center font-mabry my-14 lg:my-20">
+            <section className="container mx-auto text-center font-gobold my-14 lg:my-20">
                 {
                     loading ? (
                         <div className="flex flex-col justify-center items-center h-80 md:h-52 lg:h-96">
@@ -44,13 +45,24 @@ const LastStep: React.FC = () => {
                             <span className="font-mabry text-main text-2xl mt-2">Loading...</span>
                         </div>
                     )
-                        : (<div className="flex flex-col justify-center items-center h-full">
-                            <h2 className="text-main text-2xl lg:text-2xl font-bold px-4 mb-10 font-gobold uppercase">We <span className='text-2xl md:text-2xxl'>received</span> your inquiry</h2>
-                            <Card icon="email" active={true} chip={false} extraCardStyle="px-3 py-3" />
-                            <p className="mt-10 w-2/3 lg:w-2/6 text-center text-main font-light">
-                                We will be calling you shortly.
-                            </p>
-                        </div>)
+                    : (
+                        <div className="flex flex-col justify-center items-center font-mabry font-light">
+                            <div className="text-center lg:text-left w-80 lg:w-96 mt-28">
+                                <h2 className="font-gobold font-bold text-2xl">CONGRATULATIONS!</h2>
+                                <p className="text-main my-4 font-mabry">You are getting closer to receiving your customized tailored loan.</p>
+                                <p className="text-main my-4 font-mabry">The button "Next" will take you to fill out the application in our secure
+                                    and encrypted server.
+                                </p>
+                                <p className="text-main my-4 font-mabry">
+                                    Please proceed to receive your custom tailored.
+                                </p>
+                            </div>
+                            <Button
+                                text="NEXT"
+                                extraStyle="py-2 px-16 mt-12 font-gobold"
+                            />
+                        </div>
+                    )
                 }
             </section>
             <div className="mt-40">
@@ -60,4 +72,4 @@ const LastStep: React.FC = () => {
     )
 }
 
-export default LastStep
+export default LastStepFinal

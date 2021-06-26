@@ -15,22 +15,20 @@ const StepHomeDescription = React.forwardRef<unknown>((props, ref: any) => {
         { field: 'home_description', value: 'Townhouse', selected: false }
     ])
 
-    useEffect(() => {
-        if(home_description != ''){
-            setCardsActives(cardActives.map((e) => e.value === home_description ? { ...e, selected: true } : e))
-        }
-    }, [])
-
     useImperativeHandle(ref, () => ({
-        validateStep: (): boolean => {
-            setError(false)
-            const selected = cardActives.find(e => e.selected === true)
-            if (selected) {
-                updateForm(selected)
-                return true
+        validateStep: (valid = true): boolean => {
+            if (valid) {
+                setError(false)
+                const selected = cardActives.find(e => e.selected === true)
+                if (selected) {
+                    updateForm(selected)
+                    return true
+                } else {
+                    setError(true)
+                    return false
+                }
             } else {
-                setError(true)
-                return false
+                return true;
             }
         }
     }));
@@ -39,12 +37,17 @@ const StepHomeDescription = React.forwardRef<unknown>((props, ref: any) => {
         setError(false);
         let auxCardActives = cardActives;
         auxCardActives = (auxCardActives.map((e) => ({ ...e, selected: false })));
-        setCardsActives(auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e))
+        auxCardActives = auxCardActives.map((e, index) => index === selected ? { ...e, selected: true } : e);
+        setCardsActives(auxCardActives)
+        const option = auxCardActives.find((e: any) => e.selected === true);
+        updateForm(option);
+        {/*// @ts-ignore */ }
+        props.changeCurrentStep(1);
     }
 
     return (
         <>
-            <Subtitle text="Home Description" />
+            <Subtitle text="<span class='text-2xl md:text-2xxl'>home</span> description" />
             <div className="card-container">
                 <Card icon="home" text="Single Family" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
                 <Card icon="multi_family" text="Multi Family" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
