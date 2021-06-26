@@ -103,7 +103,7 @@ const Form: React.FC = () => {
                         {
                             (<div className="mt-8 lg:mt-4 flex flex-col items-center justify-center px-4 relative" style={{ minHeight: currentStep.stepObject.showProgressBar ? "50%" : "75%" }}>
                                 {StepComponent()}
-                                {(currentStep.step !== 0 && !currentStep.stepObject.customFooter) && (<i className="fas fa-arrow-left absolute left-4 md:left-8 lg:left-20 xl:left-40 cursor-pointer text-main text-2xl" onClick={() => changeCurrentStep(-1)}></i>)}
+                                {(currentStep.step !== 0 && !currentStep.stepObject.customFooter) && (<i className="fas fa-caret-left absolute left-4 md:left-8 lg:left-20 xl:left-40 cursor-pointer text-main text-2xl" onClick={() => changeCurrentStep(-1)}></i>)}
                             </div>)
                         }
                         {

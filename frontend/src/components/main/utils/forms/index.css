@@ -5,11 +5,11 @@
 }
 
 .radio {
-    @apply font-mabry flex items-center w-1/2 lg:w-1/5 border-main border rounded-md py-2 px-6 cursor-pointer my-1;
+    @apply font-mabry flex items-center w-1/2 lg:w-1/5 border-main border rounded-sm py-2 px-6 cursor-pointer my-1;
 }
 
 .radio-active {
-    @apply font-mabry flex items-center w-1/2 lg:w-1/5 bg-main border-main border rounded-2xl py-2 px-6 cursor-pointer my-1 text-white transform scale-105;
+    @apply font-mabry flex items-center w-1/2 lg:w-1/5 bg-main border-main border rounded-md py-2 px-6 cursor-pointer my-1 text-white;
 }
 
 .select {

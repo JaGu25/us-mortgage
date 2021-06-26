@@ -21,6 +21,7 @@ const schema = yup.object().shape({
         .required('This field is required*'),
     phone_number: yup
         .string()
+        .min(10,'Please complete 10 characters')
         .max(10,'Only 10 characters allowed')
         .required('This field is required*'),
 })

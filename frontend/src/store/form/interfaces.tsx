@@ -18,6 +18,7 @@ export interface IFormObject {
     credit_profile: string
     business_name: string
     business_code: string
+    currently_employed: string
     first_name: string
     last_name: string
     email:string
@@ -40,6 +41,7 @@ export let form: IFormObject = {
     plan_to_purchase: '',
     first_time_buyer: '',
     credit_profile: '',
+    currently_employed: '',
     business_name: '',
     business_code: '',
     first_name: '',

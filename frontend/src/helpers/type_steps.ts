@@ -16,6 +16,9 @@ import StepPropertyUse from '../components/main/steps/residential/StepPropertyUs
 import StepFirstTimeBuyer from '../components/main/steps/residential/StepFirstTimeBuyer'
 import StepPlanPurchase from '../components/main/steps/residential/StepPlanPurchase'
 import StepEmailSended from '../components/main/steps/commons/StepEmailSended'
+import StepEstimatedPurchase from '../components/main/steps/commercial/StepEstimatedPurchase'
+import StepValueOfProperty from '../components/main/steps/commercial/StepValueOfProperty'
+import StepCurrentlyEmployed from '../components/main/steps/commercial/StepCurrentlyEmployed'
 
 export const FREE_QUOTE_RESIDENTIAL: ISteps[] = [
     { component: StepResidentialLoans, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
@@ -23,6 +26,9 @@ export const FREE_QUOTE_RESIDENTIAL: ISteps[] = [
     { component: StepPropertyUse, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepFirstTimeBuyer, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepPlanPurchase, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
+    { component: StepEstimatedPurchase, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepValueOfProperty, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
+    { component: StepCurrentlyEmployed, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
     { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },

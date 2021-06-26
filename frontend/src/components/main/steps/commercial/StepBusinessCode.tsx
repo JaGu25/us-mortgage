@@ -13,10 +13,10 @@ interface IInputs {
 const schema = yup.object().shape({
     business_code: yup
         .string()
+        .min(5,'Please complete 5 characters')
         .max(5,'Only 5 characters allowed')
         .required('This field is required*'),
 })
-
 
 const StepBusinessCode =  React.forwardRef<unknown>((props, ref: any) => {
 

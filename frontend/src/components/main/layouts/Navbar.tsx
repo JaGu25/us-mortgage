@@ -21,19 +21,19 @@ const Navbar: React.FC = () => {
                         </Link>
                     </div>
                     <div className="bg-main w-1/3 sm:w-2/3 h-12 relative block lg:hidden">
-                        <div onClick={() => handleMenu()} className="cursor-pointer" >
+                        {/* <div onClick={() => handleMenu()} className="cursor-pointer" >
                             <i className="fas fa-bars absolute text-white top-0 text-2xl right-5"></i>
                             <span className="absolute text-white top-7 text-xs font-light" style={{ right: "18px" }}>MENU</span>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="bg-main py-3 px-0 w-full hidden lg:block sm:flex-1 rounded-sm h-auto sm:h-12 ml-0 sm:ml-8">
-                        <ul className="uppercase flex flex-col  sm:flex-row items-center sm:justify-evenly text-white">
+                        {/* <ul className="uppercase flex flex-col  sm:flex-row items-center sm:justify-evenly text-white">
                             <li className="py-2 sm:py-0"><a href="#">Residential Loans</a></li>
                             <li className="py-2 sm:py-0"><a href="#">Business Loans</a></li>
                             <li className="py-2 sm:py-0"><a href="#">Rates</a></li>
                             <li className="py-2 sm:py-0"><a href="#">Learning Center</a></li>
                             <li className="py-2 sm:py-0"><a href="#">Mortgage Tools</a></li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </nav>
                 <div id="menu" className="bg-main menu px-0 w-full rounded-sm ml-0 lg:ml-8 lg:hidden">

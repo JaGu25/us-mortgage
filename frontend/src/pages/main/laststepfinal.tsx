@@ -15,23 +15,14 @@ const LastStepFinal: React.FC = () => {
 
     useEffect(() => {
         if (form) {
-            sendFormCompleted()
-            const interval = setInterval(() => {
-                // history.push('/')
-            }, 5000);
             setLoading(false)
-            return () => clearInterval(interval);
         } else {
             history.push('/')
         }
     }, [])
 
-    const sendFormCompleted = async () => {
-        try {
-            await axios().post('/apply/form', { ...form });
-        } catch (error) {
-            console.log(error);
-        }
+    const openExternalLink = () => {
+        window.open("https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea")
     }
 
     return (
@@ -58,6 +49,7 @@ const LastStepFinal: React.FC = () => {
                                 </p>
                             </div>
                             <Button
+                                handleClick={() => openExternalLink()}
                                 text="NEXT"
                                 extraStyle="py-2 px-16 mt-12 font-gobold"
                             />

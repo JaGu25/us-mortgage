@@ -3,21 +3,18 @@ import { FormContext } from '../../../../store/form/formContext'
 import Subtitle from '../../utils/texts/Subtitle'
 import Radio from '../../utils/forms/Radio'
 
-const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
+const StepCurrentlyEmployed = React.forwardRef<unknown>((props, ref: any) => {
 
-    const optionsInvestment = [
-        { field: 'plan_to_purchase', value: 'Immediately: Signed a Purchase Agreement', selected: false },
-        { field: 'plan_to_purchase', value: 'Found a House/Offer Pending', selected: false },
-        { field: 'plan_to_purchase', value: 'Within 30 Days', selected: false },
-        { field: 'plan_to_purchase', value: '2 - 3 Months', selected: false },
-        { field: 'plan_to_purchase', value: '3 - 6 Months', selected: false },
-        { field: 'plan_to_purchase', value: '6+ Months', selected: false },
-        { field: 'plan_to_purchase', value: 'No Time Frame: I am Researching Options', selected: false },
+    const optionsCurrentlyEmployed = [
+        { field: 'currently_employed', value: 'Full-time', selected: false },
+        { field: 'currently_employed', value: 'Part-time', selected: false },
+        { field: 'currently_employed', value: 'Self-employed', selected: false },
+        { field: 'currently_employed', value: "No, I'm not employed", selected: false },
     ]
 
     const [error, setError] = useState(false)
     const { updateForm } = useContext(FormContext)
-    const [options, setOptions] = useState(optionsInvestment);
+    const [options, setOptions] = useState(optionsCurrentlyEmployed);
 
     useImperativeHandle(ref, () => ({
         validateStep: (valid = true): boolean => {
@@ -51,10 +48,10 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <Subtitle text="<span class='text-2xl md:text-2xxl'>when</span> Do You <span class='text-2xl md:text-2xxl'>Plan</span> to <span class='text-2xl md:text-2xxl'>Purchase Your Home?</span>" />
+            <Subtitle text="are you <span class='text-2xl md:text-2xxl'>currently employed?</span>" />
             {
                 options.map((e, index) => (
-                    <Radio key={index} text={e.value} custom={false} handleClick={() => handleSelectOption(index)} />
+                    <Radio key={index} text={e.value} custom={true} handleClick={() => handleSelectOption(index)} />
                 ))
             }
             {error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select an option</span>)}
@@ -62,4 +59,4 @@ const StepPlanPurchase = React.forwardRef<unknown>((props, ref: any) => {
     )
 })
 
-export default StepPlanPurchase
+export default StepCurrentlyEmployed

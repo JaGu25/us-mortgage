@@ -1,13 +1,15 @@
 import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import { FormContext } from '../../../../store/form/formContext'
 import Card from '../../utils/card/Card'
 import Subtitle from '../../utils/texts/Subtitle'
 
-
-
 const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
 
     const { updateForm, form: { business_own } } = useContext(FormContext)
+    let params: any = useParams();
+
+    console.log(params.type);
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
@@ -50,7 +52,8 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
 
     return (
         <>
-            <h2 className="font-gobold text-main text-2xl lg:text-4xl mb-2 lg:mt-4 uppercase font-light"><span className="font-bold">BUSINESS</span> LOANS</h2>
+            {  (params.type == "free_quote_business") && (<h3 className="text-main text-2xl lg:text-3xl font-gobold uppercase px-4 font-light mb-3">free <strong>quote</strong> for:</h3>) }
+            <h2 className="font-gobold text-main text-2xl lg:text-4xl mb-2 lg:mt-2 uppercase font-light"><span className="font-bold">BUSINESS</span> LOANS</h2>
             <Subtitle text="What type of <span class='text-2xl md:text-2xxl'>business</span> do you own?" />
             <div className="card-container">
                 <Card icon="solo_owner" text="Solo Proprietor" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
