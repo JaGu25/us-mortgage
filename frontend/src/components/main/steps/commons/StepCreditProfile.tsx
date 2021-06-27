@@ -5,7 +5,7 @@ import Subtitle from '../../utils/texts/Subtitle'
 
 const StepCreditProfile = React.forwardRef<unknown>((props, ref: any) => {
 
-    const { updateForm, form: { credit_profile } } = useContext(FormContext)
+    const { updateForm } = useContext(FormContext)
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([

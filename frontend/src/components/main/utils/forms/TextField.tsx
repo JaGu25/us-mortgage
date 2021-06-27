@@ -65,6 +65,7 @@ const TextField: React.FC<ITextFieldProps> = ({
                             placeholder={placeHolder}
                             className={`input ${hasError && ('invalid')} ${extraStyle}`}
                             style={{ paddingLeft: `${icon && ("1.5rem")}` }}
+                            onChange={handleChange}
                         />
                     )
             }

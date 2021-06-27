@@ -1,4 +1,7 @@
 
+.main input {
+    @apply border-main border rounded-md py-1 px-2 focus:outline-none focus:ring-1 focus:border-gray-100 text-gray-700 w-full;
+}
 
 .main .input {
     @apply border-main border rounded-md py-1 px-2 focus:outline-none focus:ring-1 focus:border-gray-100 text-gray-700 w-full;

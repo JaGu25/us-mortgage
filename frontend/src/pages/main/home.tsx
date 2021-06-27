@@ -41,7 +41,7 @@ const Home: React.FC = () => {
 
     return (
         <>
-            <div className="relative bg-cover bg-no-repeat bg-top lg:bg-bottom min-height transition-all duration-300 ease-in-out" style={{ backgroundImage: `url('${x.matches ? bgMb[indexBg] : bg[indexBg]}')` }}>
+            <div className="relative bg-cover bg-no-repeat bg-top lg:bg-bottom min-height transition-all duration-300 ease-in-out lazy" style={{ backgroundImage: `url('${x.matches ? bgMb[indexBg] : bg[indexBg]}')` }}>
                 <Navbar />
                 <section className="container mx-auto flex flex-col-reverse sm:items-center lg:items-start lg:flex-row relative mt-0 lg:px-20 xl:mt-2">
                     <div className="w-full lg:w-1/2 px-10 sm:px-40 sm:mt-4 lg:px-0 text-left sm:text-center lg:text-left">
@@ -75,15 +75,15 @@ const Home: React.FC = () => {
                         <div className="text-center w-1/2">
                             <h2 className="text-myred uppercase text-base -mb-2">GET YOUR FREE QUOTE</h2>
                             <div className="flex justify-center">
-                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-16 lg:w-20" handleClick={() => handleInitFlow('free_quote_residential')} />
-                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('free_quote_business')} />
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-16 lg:w-20" handleClick={() => handleInitFlow('free_quote_residential')} />
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('free_quote_business')} />
                             </div>
                         </div>
                         <div className="text-center w-1/2">
                             <h2 className="text-myred uppercase text-base -mb-2">GET YOUR LOAN</h2>
                             <div className="flex justify-center">
-                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('residential', "https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea")} />
-                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('loan_business', "")} />
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('residential', "https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea")} />
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('loan_business', "")} />
                             </div>
                         </div>
                     </div>

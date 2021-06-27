@@ -74,7 +74,6 @@ export const FREE_QUOTE_RESIDENTIAL_CASH_OUT: ISteps[] = [
     { component: StepMortgageBalance, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
     { component: StepWantToRefinance, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepAdditionalCash, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
-    { component: StepCreditProfile, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepCurrentlyEmployed, showProgressBar: true, showNextButton: false, isCompleted: false, customFooter: false },
     { component: StepBusinessCode, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },
     { component: StepProfileInfo, showProgressBar: true, showNextButton: true, isCompleted: false, customFooter: false },

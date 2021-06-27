@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import { FormContext } from '../../../store/form/formContext'
 import logoImg from './../../../assets/imgs/logo.png'
 
 const Navbar: React.FC = () => {
@@ -9,6 +10,8 @@ const Navbar: React.FC = () => {
         menu?.classList.toggle('menu-active');
         menu?.classList.toggle('menu');
     }
+
+    const { form: { full_name } } = useContext(FormContext)
 
     return (
         <div className="font-light">
@@ -20,13 +23,15 @@ const Navbar: React.FC = () => {
                             <img src={logoImg} alt="Logo US Mortgage" className="w-48 sm:48 mx-4 inline-block -mt-3 sm:mr-2 sm:-mt-6 lg:-mt-3 xl:-mr-5" />
                         </Link>
                     </div>
-                    <div className="bg-main w-1/3 sm:w-2/3 h-12 relative block lg:hidden">
+                    <div className="bg-main w-1/3 sm:w-2/3 h-12 relative flex items-center lg:hidden">
+                        {full_name.length > 0 && (<h2 className="ml-4 text-white tracking-wider text-xs sm:text-sm">THANK YOU, "{full_name}"</h2>)}
                         {/* <div onClick={() => handleMenu()} className="cursor-pointer" >
                             <i className="fas fa-bars absolute text-white top-0 text-2xl right-5"></i>
                             <span className="absolute text-white top-7 text-xs font-light" style={{ right: "18px" }}>MENU</span>
                         </div> */}
                     </div>
                     <div className="bg-main py-3 px-0 w-full hidden lg:block sm:flex-1 rounded-sm h-auto sm:h-12 ml-0 sm:ml-8">
+                        {full_name.length > 0 && (<h2 className="ml-8 text-white tracking-wider text-base">THANK YOU, "{full_name}"</h2>)}
                         {/* <ul className="uppercase flex flex-col  sm:flex-row items-center sm:justify-evenly text-white">
                             <li className="py-2 sm:py-0"><a href="#">Residential Loans</a></li>
                             <li className="py-2 sm:py-0"><a href="#">Business Loans</a></li>

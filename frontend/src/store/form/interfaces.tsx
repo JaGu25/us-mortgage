@@ -19,8 +19,7 @@ export interface IFormObject {
     business_name: string
     business_code: string
     currently_employed: string
-    first_name: string
-    last_name: string
+    full_name: string
     email:string
     phone_number?: any
     estimated_value_property?: number
@@ -50,8 +49,7 @@ export let form: IFormObject = {
     currently_employed: '',
     business_name: '',
     business_code: '',
-    first_name: '',
-    last_name: '',
+    full_name: '',
     email:'',
     phone_number: null,
     estimated_value_property: 0,
