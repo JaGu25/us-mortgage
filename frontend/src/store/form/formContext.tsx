@@ -21,7 +21,7 @@ export const FormContext = React.createContext<IForm>({
 
 const FormProvider = ({ children }: Props): any => {
 
-    const [state, dispatch] = useReducer(FormReducer, form)
+    const [state, dispatch] = useReducer(FormReducer, { form })
 
     const updateForm = (field: any): void => {
         dispatch({

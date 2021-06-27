@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useImperativeHandle } from 'react'
+import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
 import { FormContext } from '../../../../store/form/formContext'
 import { useForm } from 'react-hook-form'
 import TextField from '../../utils/forms/TextField'
@@ -13,7 +13,8 @@ interface IInputs {
 
 const StepEstimatedPurchase = React.forwardRef<unknown>((props, ref: any) => {
 
-    const { updateForm, form: { money_need } } = useContext(FormContext)
+    const { form: { estimated_purchase_price } } = useContext(FormContext)
+    const [error, setError] = useState(false)
 
     const marks = {
         0: '$0',
@@ -38,20 +39,25 @@ const StepEstimatedPurchase = React.forwardRef<unknown>((props, ref: any) => {
     const min = 0;
     const max = 4000000;
 
-
-    useEffect(() => {
-    }, [])
+    const [value01, value02] = estimated_purchase_price.split('-');
 
     useImperativeHandle(ref, () => ({
         validateStep: async (): Promise<boolean> => {
-            return true;
+            const [value01, value02] = estimated_purchase_price.split('-');
+            if (parseInt(value02) - parseInt(value01) > 0) {
+                setError(false);
+                return true;
+            }
+            setError(true);
+            return false;
         }
     }));
 
     return (
         <>
             <Subtitle text="what is the estimated <span class='text-2xl md:text-2xxl'>purchase price?</span>" />
-            <InputSlideNumber marks={marks} min={min} max={max} range={true} />
+            <InputSlideNumber marks={marks} min={min} max={max} range={true} value={[value01, value02]} field="estimated_purchase_price" />
+            {error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select the estimated purchase price</span>)}
         </>
     )
 })

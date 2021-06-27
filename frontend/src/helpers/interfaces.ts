@@ -24,4 +24,6 @@ export interface ISteps {
     showNextButton: boolean
     isCompleted: boolean
     customFooter: boolean
+    customWay?: boolean
+    field?: string
 }

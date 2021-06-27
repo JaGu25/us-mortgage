@@ -17,7 +17,9 @@ const reducer: React.Reducer<any, any> = (state, action) => {
         form
       }
     default:
-      return state
+      return {
+        form
+      }
   }
 }
 

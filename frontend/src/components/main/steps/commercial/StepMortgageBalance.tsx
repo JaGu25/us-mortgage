@@ -1,39 +1,29 @@
-import React, { useContext, useEffect, useImperativeHandle } from 'react'
+import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
 import { FormContext } from '../../../../store/form/formContext'
-import { useForm } from 'react-hook-form'
 import Subtitle from '../../utils/texts/Subtitle'
 import InputSlideNumber from '../../utils/input_slide/InputSlideNumber'
 
-interface IInputs {
-    money_need: string
-}
-
 const StepMortgageBalance = React.forwardRef<unknown>((props, ref: any) => {
 
-    const { updateForm, form: { money_need } } = useContext(FormContext)
+    const { form: { morgate_balance } } = useContext(FormContext)
+    const [error, setError] = useState(false)
 
     const marks = {
-        0: '$0',
-        100000: '',
-        200000: '',
-        300000: '',
-        400000: '',
-        500000: '',
-        600000: '',
-        700000: '',
-        800000: '',
-        900000: '',
-        1000000: '',
-        1500000: '',
-        2000000: '',
-        2500000: '',
-        3000000: '',
-        3500000: '',
-        4000000: '$4M+'
+        0: '0%',
+        10: '',
+        20: '',
+        30: '',
+        40: '',
+        50: '',
+        60: '',
+        70: '',
+        80: '',
+        90: '',
+        100: '100%',
     }
 
     const min = 0;
-    const max = 4000000;
+    const max = 100;
 
 
     useEffect(() => {
@@ -41,14 +31,20 @@ const StepMortgageBalance = React.forwardRef<unknown>((props, ref: any) => {
 
     useImperativeHandle(ref, () => ({
         validateStep: async (): Promise<boolean> => {
-            return true;
+            if ((morgate_balance || 0) > 0) {
+                setError(false);
+                return true;
+            }
+            setError(true);
+            return false;
         }
     }));
 
     return (
         <>
-            <Subtitle text="what is the estimated <span class='text-2xl md:text-2xxl'>purchase price?</span>" />
-            <InputSlideNumber marks={marks} min={min} max={max} range={true} />
+            <Subtitle text="what is the <span class='text-2xl md:text-2xxl'>mortgage balance?</span>" />
+            <InputSlideNumber marks={marks} min={min} max={max} range={false} value={[0, 50]} percentaje={true} field="morgate_balance" />
+            {error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select the mortgage balance</span>)}
         </>
     )
 })

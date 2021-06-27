@@ -1,5 +1,5 @@
 
-type PropertyUse = 'Primary Residence' | 'Secondary Home' | 'Investment Property' | ''
+type PropertyUse = 'Primary Home' | 'Secondary Home' | 'Investment Property' | ''
 type FirstTimeBuyer = "yes" | "no" | ''
 
 export interface IFormObject {
@@ -23,6 +23,12 @@ export interface IFormObject {
     last_name: string
     email:string
     phone_number?: any
+    estimated_value_property?: number
+    estimated_purchase_price: string,
+    down_payment: string,
+    morgate_balance?: number
+    additional_cash: string
+    want_to_refinance: string
     password: string
     completed: boolean
 }
@@ -48,6 +54,12 @@ export let form: IFormObject = {
     last_name: '',
     email:'',
     phone_number: null,
+    estimated_value_property: 0,
+    estimated_purchase_price: "0-0",
+    down_payment: "0-0",
+    want_to_refinance: '',
+    morgate_balance: 50,
+    additional_cash: '',
     password: '',
     completed: false
 }

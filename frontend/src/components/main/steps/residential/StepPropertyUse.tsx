@@ -9,7 +9,7 @@ const StepPropertyUse = React.forwardRef<unknown>((props, ref: any) => {
 
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
-        { field: 'property_use', value: 'Primary Residence', selected: false },
+        { field: 'property_use', value: 'Primary Home', selected: false },
         { field: 'property_use', value: 'Secondary Home', selected: false },
         { field: 'property_use', value: 'Investment Property', selected: false },
     ])
@@ -48,7 +48,7 @@ const StepPropertyUse = React.forwardRef<unknown>((props, ref: any) => {
         <>
             <Subtitle text="<span class='text-2xl md:text-2xxl'>property</span> use" />
             <div className="card-container">
-                <Card icon="primary_residence" text="" twoWords={['Primary', 'Residence']} extraChipStyle="card-chip-add" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
+                <Card icon="primary_residence" text="" twoWords={['Primary', 'Home']} extraChipStyle="card-chip-add" active={cardActives[0].selected} handleClick={() => handleSelectCard(0)} />
                 <Card icon="secondary_home" text="" twoWords={['Secondary', 'Home']} extraChipStyle="card-chip-add" active={cardActives[1].selected} handleClick={() => handleSelectCard(1)} />
                 <Card icon="invesment_property" text="" twoWords={['Investment', 'Property']} extraChipStyle="card-chip-add" active={cardActives[2].selected} handleClick={() => handleSelectCard(2)} />
             </div>

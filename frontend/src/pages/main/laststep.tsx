@@ -16,7 +16,7 @@ const LastStep: React.FC = () => {
         if (form) {
             sendFormCompleted()
             const interval = setInterval(() => {
-                // history.push('/')
+                history.push('/')
             }, 5000);
             setLoading(false)
             return () => clearInterval(interval);
