@@ -23,12 +23,18 @@ class FlowForm extends Model
         'plan_to_purchase',
         'first_time_buyer',
         'credit_profile',
+        'currently_employed',
         'business_name',
         'business_code',
-        'first_name',
-        'last_name',
+        'full_name',
         'email',
         'phone_number',
+        'estimated_value_property',
+        'estimated_purchase_price',
+        'down_payment',
+        'want_to_refinance',
+        'morgate_balance',
+        'additional_cash',
         'password'
     ];
 

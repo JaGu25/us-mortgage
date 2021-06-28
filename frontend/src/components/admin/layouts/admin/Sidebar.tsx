@@ -42,25 +42,46 @@ const Sidebar: React.FC<Props> = ({ isOpen, setIsOpen }) => {
                     </NavLink>
                 </nav>
                 <nav className="mt-4">
+                    <a
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
+                        href="#"
+                    >
+                        <span className="mx-4">FREE QUOTE</span>
+                    </a>
                     <NavLink
                         activeClassName="active-className"
                         className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
-                        to={"/admin/residential"}
+                        to={"/admin/free_quote_residential"}
 
                     >
                         <Icons icon="home" myStyle="fill-current text-gray-500 w-8" />
                         <span className="mx-4">Residential</span>
                     </NavLink>
-                </nav>
-                <nav className="mt-4">
                     <NavLink
                         activeClassName="active-className"
                         className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
-                        to={"/admin/commercial"}
+                        to={"/admin/free_quote_business"}
 
                     >
                         <Icons icon="commercial" myStyle="fill-current text-gray-500 w-8" />
-                        <span className="mx-4">Commercial</span>
+                        <span className="mx-4">Business</span>
+                    </NavLink>
+                </nav>
+                <nav className="mt-4">
+                    <a
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
+                        href="#"
+                    >
+                        <span className="mx-4">GET YOUR LOAN</span>
+                    </a>
+                    <NavLink
+                        activeClassName="active-className"
+                        className="flex items-center duration-200 mt-4 py-2 px-6 border-l-4 border-gray-900 text-gray-500 hover:bg-gray-400 hover:bg-opacity-25 hover:text-gray-100"
+                        to={"/admin/loan_business"}
+
+                    >
+                        <Icons icon="commercial" myStyle="fill-current text-gray-500 w-8" />
+                        <span className="mx-4">Business</span>
                     </NavLink>
                 </nav>
             </div>

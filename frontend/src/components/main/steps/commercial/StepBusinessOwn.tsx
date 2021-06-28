@@ -9,8 +9,6 @@ const StepBusinessOwn = React.forwardRef<unknown>((props, ref: any) => {
     const { updateForm, form: { business_own } } = useContext(FormContext)
     let params: any = useParams();
 
-    console.log(params.type);
-
     const [error, setError] = useState(false)
     const [cardActives, setCardsActives] = useState([
         { field: 'business_own', value: 'Solo Proprietor', selected: false },

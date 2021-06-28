@@ -29,8 +29,9 @@ export const yearOptions = (lenth = 30) => {
     return arrayYears
 }
 
-export const RESIDENTIAL = "residential";
-export const COMMERCIAL = "commercial";
+export const FREE_QUOTE_RESIDENTIAL = "free_quote_residential"
+export const FREE_QUOTE_BUSINESS = "free_quote_business";
+export const LOAN_BUSINESS = "loan_business";
 
 
 export const getDataByType = async (type: string) => {

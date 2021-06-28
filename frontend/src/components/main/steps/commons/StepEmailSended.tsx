@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useImperativeHandle, useState } from 'react'
 import { useHistory } from 'react-router-dom'
+import axios from '../../../../config/axios'
 import { FormContext } from '../../../../store/form/formContext'
 import Button from '../../utils/buttons/Button'
 import Card from '../../utils/card/Card'
@@ -9,9 +10,24 @@ import Subtitle from '../../utils/texts/Subtitle'
 const StepEmailSended = React.forwardRef<unknown>((props, ref: any) => {
 
     const history = useHistory()
+    const { form } = useContext(FormContext)
 
     const handleLastStep = () => {
         history.push('/endform02')
+    }
+
+    useEffect(() => {
+        if (form) {
+            sendFormCompleted()
+        }
+    }, [])
+
+    const sendFormCompleted = async () => {
+        try {
+            await axios().post('/apply/form', { ...form });
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     return (

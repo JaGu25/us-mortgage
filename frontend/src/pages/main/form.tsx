@@ -118,7 +118,7 @@ const Form: React.FC = () => {
     }
 
     const changeFlow = (step: number, changeStep: number) => {
-      
+
         let aux = [...stepper];
 
         if (stepper[step].field == 'residential_loans') {
@@ -132,7 +132,7 @@ const Form: React.FC = () => {
             if (form.residential_loans == "Home Purchase" && form.property_use == "Primary Home") {
                 aux = [...FREE_QUOTE_RESIDENTIAL_PRIMARY]
             }
-            if (form.residential_loans == "Home Purchase" && form.property_use == "Secondary Home" || form.property_use == "Investment Property") {
+            if (form.residential_loans == "Home Purchase" && (form.property_use == "Secondary Home" || form.property_use == "Investment Property")) {
                 aux = [...FREE_QUOTE_RESIDENTIAL_SECONDARY]
             }
         }
@@ -153,7 +153,7 @@ const Form: React.FC = () => {
                             (currentStep.stepObject.showProgressBar && (<ProgressBar percentaje={percentaje} />))
                         }
                         {
-                            (<div className={`mt-8 lg:mt-4 flex flex-col items-center justify-center px-8 lg:px-4 relative ${!currentStep.stepObject.showNextButton && ('pb-24 lg::pb-0')}`} 
+                            (<div className={`mt-8 lg:mt-4 flex flex-col items-center justify-center px-8 lg:px-4 relative ${!currentStep.stepObject.showNextButton && ('pb-24 lg::pb-0')}`}
                                 style={{ minHeight: currentStep.stepObject.showProgressBar ? "50%" : "75%" }}>
                                 {StepComponent()}
                                 {(currentStep.step !== 0 && !currentStep.stepObject.customFooter) && (<i className="fas fa-caret-left absolute left-4 md:left-8 lg:left-20 xl:left-40 cursor-pointer text-main text-2xl" onClick={() => changeCurrentStep(-1)}></i>)}

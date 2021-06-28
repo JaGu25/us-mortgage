@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
 
 class CreateFlowFormsTable extends Migration
@@ -28,13 +29,19 @@ class CreateFlowFormsTable extends Migration
             $table->string('plan_to_purchase')->nullable();
             $table->string('first_time_buyer')->nullable();
             $table->string('credit_profile')->nullable();
+            $table->string('currently_employed')->nullable();
             $table->string('business_name')->nullable();
-            $table->string('business_code');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email');
-            $table->string('phone_number');
-            $table->string('password');
+            $table->string('business_code')->nullable();
+            $table->string('full_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('phone_number')->nullable();
+            $table->string('estimated_value_property')->nullable();
+            $table->string('estimated_purchase_price')->nullable();
+            $table->string('down_payment')->nullable();
+            $table->string('want_to_refinance')->nullable();
+            $table->string('morgate_balance')->nullable();
+            $table->string('additional_cash')->nullable();
+            $table->string('password')->nullable();
             $table->timestamps();
         });
     }

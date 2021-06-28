@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <td align="left" style="padding-left: 20px;padding-right: 20px;background-color: #1f284c;">
-                            <p style="color: white;font-family: Arial, sans-serif;font-style: normal;font-weight: 300;font-size: 16px;margin:22px 0px 22px 0px;"><b style="color: white;font-weight: 700;">Thanks for contacting us,</b> {{$form->first_name}}</p>
+                            <p style="color: white;font-family: Arial, sans-serif;font-style: normal;font-weight: 300;font-size: 16px;margin:22px 0px 22px 0px;"><b style="color: white;font-weight: 700;">Thanks for contacting us,</b> {{$form->full_name}}</p>
                         </td>
                     </tr>
                     <tr>

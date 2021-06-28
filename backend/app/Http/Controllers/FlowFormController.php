@@ -41,21 +41,25 @@ class FlowFormController extends Controller
             'plan_to_purchase' => $request->get('plan_to_purchase'),
             'first_time_buyer' => $request->get('first_time_buyer'),
             'credit_profile' => $request->get('credit_profile'),
+            'currently_employed' => $request->get('currently_employed'),
             'business_name' => $request->get('business_name'),
             'business_code' => $request->get('business_code'),
-            'first_name' => $request->get('first_name'),
-            'last_name' => $request->get('last_name'),
+            'full_name' => $request->get('full_name'),
             'email' => $request->get('email'),
             'phone_number' => $request->get('phone_number'),
-            'password' => Hash::make($request->get('password'))
+            'estimated_value_property' => $request->get('estimated_value_property'),
+            'estimated_purchase_price' => $request->get('estimated_purchase_price'),
+            'down_payment' => $request->get('down_payment'),
+            'want_to_refinance' => $request->get('want_to_refinance'),
+            'morgate_balance' => $request->get('morgate_balance'),
+            'additional_cash' => $request->get('additional_cash')
         ]);
 
-        $send = [$request->get('email')];
-        $notification = ['raulcorreakemish@gmail.com']; //
-        // $notification = ['max.carrasco.h@gmail.com']; //raulcorreakemish@gmail.com
+        $notification_user = [$request->get('email')];
+        // $notification_admins = ['raulcorreakemish@gmail.com']; //
 
-        Mail::to($send)->send(new MortgageMail($form,"Thanks for contacting us, ".$request->get('first_name'),"mortgage"));
-        Mail::to($notification)->send(new MortgageMail($form,"Notification - ".$request->get('first_name'),"notification"));
+        Mail::to($notification_user)->send(new MortgageMail($form,"Thanks for contacting us, ".$request->get('full_name'),"mortgage"));
+        // Mail::to($notification_admins)->send(new MortgageMail($form,"Notification - ".$request->get('first_name'),"notification"));
 
         return response()->json(['message' => 'Data saved'], 200);
     }
