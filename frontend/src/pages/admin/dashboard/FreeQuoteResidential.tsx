@@ -38,7 +38,7 @@ const columns = [
             return (<p>{parseInt(value1).toLocaleString('es-US')} to {parseInt(value2).toLocaleString('es-US')}% </p>);
         }
     },
-    { name: 'First Time Home Buyer', sortable: true, selector: "first_time_buyer", cell: (row: any) => (<p>{row.first_time_buyer ? row.first_time_buyer : '---'}</p>) },
+    { name: 'First Time Home Buyer?', sortable: true, selector: "first_time_buyer", cell: (row: any) => (<p>{row.first_time_buyer ? row.first_time_buyer : '---'}</p>) },
     { name: 'Credit Profile', sortable: true, selector: "credit_profile", cell: (row: any) => (<p>{row.credit_profile ? row.credit_profile : '---'}</p>) },
     { name: 'Currently employed?', sortable: true, selector: "currently_employed", cell: (row: any) => (<p>{row.currently_employed}</p>) },
     { name: 'Business Code', sortable: true, selector: "business_code", cell: (row: any) => (<p>{row.business_code}</p>) },

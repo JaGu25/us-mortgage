@@ -7,7 +7,7 @@
 </head>
 <body style="margin: 0; padding: 0;">
     <p>
-        {{$form->first_name}} / {{$form->type}}
+        {{$form->full_name}} / {{$form->type}}
     </p>
 </body>
 </html>
