@@ -39,12 +39,9 @@ const StepEstimatedPurchase = React.forwardRef<unknown>((props, ref: any) => {
     const min = 0;
     const max = 4000000;
 
-    const [value01, value02] = estimated_purchase_price.split('-');
-
     useImperativeHandle(ref, () => ({
         validateStep: async (): Promise<boolean> => {
-            const [value01, value02] = estimated_purchase_price.split('-');
-            if (parseInt(value02) - parseInt(value01) > 0) {
+            if ((estimated_purchase_price || 0) > 0) {
                 setError(false);
                 return true;
             }
@@ -56,7 +53,7 @@ const StepEstimatedPurchase = React.forwardRef<unknown>((props, ref: any) => {
     return (
         <>
             <Subtitle text="what is the estimated <span class='text-2xl md:text-2xxl'>purchase price?</span>" />
-            <InputSlideNumber marks={marks} min={min} max={max} range={true} value={[value01, value02]} field="estimated_purchase_price" />
+            <InputSlideNumber marks={marks} min={min} max={max} range={false} value={[0, estimated_purchase_price]} field="estimated_purchase_price" />
             {error && (<span className="text-red-500 block mt-10 -mb-6 font-mabry">Please select the estimated purchase price</span>)}
         </>
     )

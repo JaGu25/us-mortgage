@@ -43,9 +43,9 @@ const Home: React.FC = () => {
         <>
             <div className="relative bg-cover bg-no-repeat bg-top lg:bg-bottom min-height transition-all duration-300 ease-in-out lazy" style={{ backgroundImage: `url('${x.matches ? bgMb[indexBg] : bg[indexBg]}')` }}>
                 <Navbar />
-                <section className="container mx-auto flex flex-col-reverse sm:items-center lg:items-start lg:flex-row relative mt-0 lg:px-20 xl:mt-2">
-                    <div className="w-full lg:w-1/2 px-10 sm:px-40 sm:mt-4 lg:px-0 text-left sm:text-center lg:text-left">
-                        <h1 className="text-main hidden lg:block text-3xl lg:text-5xl xl:text-7xl font-light tracking-wider text-center lg:text-left mt-8">
+                <section className="container mx-auto flex flex-col-reverse sm:items-center lg:items-start lg:flex-row relative mt-0 lg:pl-4 lg:pr-2 xl:mt-2">
+                    <div className="w-full lg:w-1/2 px-6 sm:px-40 mt-1 sm:mt-6 lg:px-0 text-left sm:text-center lg:text-left xl:flex-1">
+                        <h1 className="text-main hidden lg:block text-3xl lg:text-5xl font-light tracking-wider text-center lg:text-left mt-8">
                             <span className="block">
                                 <span className="font-semibold mr-4">
                                     GET
@@ -65,25 +65,25 @@ const Home: React.FC = () => {
                                 DREAMS
                             </span>
                         </h1>
-                        <h1 className="text-main lg:hidden text-3xl font-light tracking-wider mt-3">
+                        <h1 className="text-main lg:hidden text-2xl font-light tracking-wider mt-3">
                             <strong>GET</strong> YOUR <strong>LOANS,  ACHIEVE</strong> YOUR <strong>DREAMS</strong>
                         </h1>
                         <p className="text-main lg:text-white font-light py-4 lg:pl-0 lg:pr-16 xl:pr-40 text-xs lg:text-xl uppercase text-shadow">At US Mortgage Wholesale, we strive to put our experience, knowledge,
                             and resources as our top priority serving our clients.</p>
                     </div>
-                    <div className="w-full px-6 lg:w-1/2 h-full flex flex-row sm:flex-col sm:items-center justify-center lg:flex-row lg:justify-end mt-3 lg:mt-6 sm:mt-10">
+                    <div className="w-full px-6 lg:w-1/2 xl:w-2/5 h-full flex flex-row sm:flex-col sm:items-center justify-center lg:flex-row lg:justify-end mt-3 lg:mt-6 sm:mt-10">
                         <div className="text-center w-1/2">
-                            <h2 className="text-myred uppercase text-base -mb-2">GET YOUR FREE QUOTE</h2>
+                            <h2 className="text-myred uppercase text-sm lg:text-base -mb-2">GET YOUR <span className="text-base lg:text-lg">FREE QUOTE</span></h2>
                             <div className="flex justify-center">
-                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-16 lg:w-20" handleClick={() => handleInitFlow('free_quote_residential')} />
-                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('free_quote_business')} />
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-16 lg:w-20" handleClick={() => handleInitFlow('free_quote_residential')} />
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('free_quote_business')} />
                             </div>
                         </div>
                         <div className="text-center w-1/2">
-                            <h2 className="text-myred uppercase text-base -mb-2">GET YOUR LOAN</h2>
+                            <h2 className="text-myred uppercase text-sm lg:text-base -mb-2">GET YOUR <span className="text-base lg:text-lg">LOAN</span></h2>
                             <div className="flex justify-center">
-                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('residential', "https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea")} />
-                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 xl:w-28 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('loan_business', "")} />
+                                <Card icon="home" text="Residential" active={false} extraCardStyle="w-16 md:w-20 py-2 my-5 mx-0 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('residential', "https://www.blink.mortgage/app/signup/p/nexamortgagey/raulcorrea?campaign=rcorrea")} />
+                                <Card icon="commercial" text="Business" active={false} extraCardStyle="w-16 md:w-20 py-2 my-5 px-1" extraChipStyle="text-xss text-center min-width-chip" extraIconStyle="w-20" handleClick={() => handleInitFlow('loan_business', "")} />
                             </div>
                         </div>
                     </div>

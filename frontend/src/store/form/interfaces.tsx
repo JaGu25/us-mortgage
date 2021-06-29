@@ -23,8 +23,8 @@ export interface IFormObject {
     email:string
     phone_number?: any
     estimated_value_property?: number
-    estimated_purchase_price: string,
-    down_payment: string,
+    estimated_purchase_price: number,
+    down_payment: number,
     morgate_balance?: number
     additional_cash: string
     want_to_refinance: string
@@ -53,8 +53,8 @@ export let form: IFormObject = {
     email:'',
     phone_number: null,
     estimated_value_property: 0,
-    estimated_purchase_price: "0-0",
-    down_payment: "0-0",
+    estimated_purchase_price: 0,
+    down_payment: 0,
     want_to_refinance: '',
     morgate_balance: 50,
     additional_cash: '',

@@ -6,7 +6,7 @@ import poweredByImg from './../../../assets/imgs/powered_by.png'
 const Footer: React.FC = () => {
     return (
         <div
-            className="bg-main my-auto w-full flex md:flex-row justify-evenly items-center md:justify-between px-2 md:px-40 py-0 md:py-3 font-light tracking-widest"
+            className="bg-main my-auto w-full flex md:flex-row justify-evenly items-center md:justify-between px-2 md:px-40 py-0 font-light tracking-widest"
         >
             <ul className="flex justify-evenly text-white items-center">
                 <li>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
                 </li>
             </ul>
             <a href="tel:720 675 7757" className='text-base block lg:hidden lg:text-xl ml-4 text-white'>720 675 7757</a>
-            <img src={poweredByImg} alt="Powered By Next Mortgage" className="w-20 ml-3 lg:ml-0 lg:w-24 py-4 lg:py-0 md:p-0" />
+            <img src={poweredByImg} alt="Powered By Next Mortgage" className="w-20 ml-3 lg:ml-0 lg:w-20 py-4 lg:py-0 md:p-0" />
         </div>
 
     )

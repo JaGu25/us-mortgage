@@ -11,16 +11,18 @@ interface IProps {
     value?: any
     field?: string
     percentaje?: boolean
+    onlyPercentaje?: boolean
 }
 
 const InputSlideNumber: React.FC<IProps> = ({
-    marks,
+    marks = [],
     min,
     max,
     range = false,
     value = null,
     field = '',
-    percentaje = false
+    percentaje = false,
+    onlyPercentaje = false
 }) => {
 
     const { updateForm, form: { estimated_value_property } } = useContext(FormContext);
@@ -48,12 +50,15 @@ const InputSlideNumber: React.FC<IProps> = ({
     return (
         <div className="bg-gray-100 w-4/5 sm:w-3/5 lg:w-1/2 xl:w-1/3 rounded-lg shadow-md px-8 lg:px-20 pt-8 pb-20 mt-4 flex flex-col">
             {
-                percentaje ? ( range ? (<h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">{state[0]} <span className="px-2">to</span> {state[1]}%</h2>)
+                !onlyPercentaje ? (
+                    percentaje ? ( range ? (<h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">{state[0]} <span className="px-2">to</span> {state[1]}%</h2>)
                                 : (<h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">$ {( (estimated_value_property || 0) *(state[1] / 100)).toLocaleString('es-US')}</h2>)
                             ) 
                             : (  range ? (<h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">$ {state[0].toLocaleString('es-US')} <span className="px-2">to</span> $ {state[1].toLocaleString('es-US')}</h2>)
                                       : <h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">$ {state[1].toLocaleString('es-US')}</h2>
                                 )
+                ) : 
+                (<h2 className="font-mabry text-main mb-12 text-sm sm:text-lg lg:text-2xl">{state[1]} %</h2>)
             }
             <Range
                 min={min}

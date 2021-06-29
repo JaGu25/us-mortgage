@@ -148,15 +148,14 @@ const Form: React.FC = () => {
             <Navbar />
             {
                 currentStep && (
-                    <section className="container mx-auto text-center py-8" style={{ height: "calc(100vh - 250px)" }}>
+                    <section className="container mx-auto text-center py-8 relative" style={{ minHeight: "720px" }}>
                         {
                             (currentStep.stepObject.showProgressBar && (<ProgressBar percentaje={percentaje} />))
                         }
                         {
-                            (<div className={`mt-8 lg:mt-4 flex flex-col items-center justify-center px-8 lg:px-4 relative ${!currentStep.stepObject.showNextButton && ('pb-24 lg::pb-0')}`}
+                            (<div className={`mt-8 lg:mt-10 flex flex-col items-center justify-center px-8 lg:px-4 relative ${!currentStep.stepObject.showNextButton && ('pb-24 lg::pb-0')}`}
                                 style={{ minHeight: currentStep.stepObject.showProgressBar ? "50%" : "75%" }}>
                                 {StepComponent()}
-                                {(currentStep.step !== 0 && !currentStep.stepObject.customFooter) && (<i className="fas fa-caret-left absolute left-4 md:left-8 lg:left-20 xl:left-40 cursor-pointer text-main text-2xl" onClick={() => changeCurrentStep(-1)}></i>)}
                             </div>)
                         }
                         {
@@ -175,6 +174,7 @@ const Form: React.FC = () => {
                                 <div className="py-8"><FooterForm /> </div>
                             ))
                         }
+                        {(currentStep.step !== 0 && !currentStep.stepObject.customFooter) && (<i className="fas fa-caret-left absolute left-4 xl:left-20 cursor-pointer text-main text-2xl top-72 md:top-80" onClick={() => changeCurrentStep(-1)}></i>)}
                     </section>
                 )
             }
